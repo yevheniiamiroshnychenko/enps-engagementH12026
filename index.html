@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>eNPS & Engagement · Back Office | H1 2026</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+  :root {
+    --pink: #C8134A;
+    --dark: #F5F1EB;
+    --card: #FFFFFF;
+    --card2: #EDE8DF;
+    --text: #2A2420;
+    --muted: #8A7F72;
+    --green: #3A9E6F;
+    --green-light: #EBF7F2;
+    --amber: #B8720A;
+    --red: #C42B47;
+    --blue: #2E6BB5;
+    --sage: #6A9E7A;
+    --sage-light: #EEF5EF;
+    --beige: #F0E9DF;
+    --beige2: #E8DFD2;
+    --border: rgba(42,36,32,0.1);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--dark);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .cover {
+    background: linear-gradient(135deg, #2A3828 0%, #1E3330 40%, #2A2838 100%);
+    padding: 52px 48px 40px;
+    border-bottom: 3px solid var(--pink);
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(106,158,122,0.2) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .cover::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; left: 20%;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(200,19,74,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .cover-label { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #9ECFB0; font-weight: 600; margin-bottom: 10px; }
+  .cover h1 { font-family: 'DM Serif Display', serif; font-size: 44px; line-height: 1.1; color: #F5F1EB; margin-bottom: 6px; }
+  .cover-unit { font-size: 20px; color: #9ECFB0; font-weight: 600; margin-bottom: 6px; }
+  .cover-meta { color: rgba(245,241,235,0.55); font-size: 13px; }
+  .cover-badges { display: flex; gap: 10px; margin-top: 24px; flex-wrap: wrap; }
+  .badge { background: rgba(106,158,122,0.18); border: 1px solid rgba(158,207,176,0.35); color: #9ECFB0; font-size: 12px; font-weight: 600; padding: 5px 14px; border-radius: 100px; }
+  .tabs-nav { position: sticky; top: 0; z-index: 100; background: #FFFFFF; border-bottom: 1px solid var(--border); box-shadow: 0 2px 8px rgba(42,36,32,0.06); display: flex; gap: 0; padding: 0 32px; overflow-x: auto; scrollbar-width: none; }
+  .tabs-nav::-webkit-scrollbar { display: none; }
+  .tab-btn { flex-shrink: 0; background: none; border: none; border-bottom: 3px solid transparent; color: var(--muted); font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.5px; padding: 14px 20px; cursor: pointer; transition: color 0.15s, border-color 0.15s; white-space: nowrap; }
+  .tab-btn:hover { color: var(--text); }
+  .tab-btn.active { color: var(--pink); border-bottom-color: var(--pink); }
+  .tab-pane { display: none; }
+  .tab-pane.active { display: block; }
+  .container { max-width: 960px; margin: 0 auto; padding: 36px 24px 60px; }
+  .section { margin-bottom: 44px; }
+  .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 10px; }
+  .kpi-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 18px 14px; text-align: center; box-shadow: 0 1px 4px rgba(42,36,32,0.05); }
+  .kpi-value { font-family: 'DM Serif Display', serif; font-size: 30px; color: var(--pink); line-height: 1; margin-bottom: 6px; }
+  .kpi-label { font-size: 11px; color: var(--muted); line-height: 1.4; }
+  .risk-banner { background: linear-gradient(90deg, rgba(196,43,71,0.06), rgba(196,43,71,0.02)); border-left: 4px solid var(--red); border-radius: 0 8px 8px 0; padding: 16px 20px; margin-top: 14px; }
+  .risk-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--red); font-weight: 700; margin-bottom: 6px; }
+  .risk-text { font-size: 13px; line-height: 1.65; color: var(--text); }
+  .info-banner { background: linear-gradient(90deg, rgba(46,107,181,0.07), rgba(46,107,181,0.02)); border-left: 4px solid var(--blue); border-radius: 0 8px 8px 0; padding: 16px 20px; margin-top: 12px; }
+  .info-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--blue); font-weight: 700; margin-bottom: 6px; }
+  .green-banner { background: linear-gradient(90deg, rgba(58,158,111,0.08), rgba(58,158,111,0.02)); border-left: 4px solid var(--sage); border-radius: 0 8px 8px 0; padding: 16px 20px; margin-top: 12px; }
+  table { width: 100%; border-collapse: collapse; }
+  thead th { background: var(--beige2); color: var(--muted); font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; padding: 11px 14px; text-align: left; font-weight: 600; }
+  tbody tr { border-bottom: 1px solid var(--border); }
+  tbody tr:hover { background: var(--sage-light); }
+  tbody td { padding: 11px 14px; font-size: 13px; color: var(--text); }
+  .tag { display: inline-block; padding: 3px 10px; border-radius: 100px; font-size: 11px; font-weight: 600; }
+  .tag-green { background: rgba(58,158,111,0.12); color: var(--green); }
+  .tag-blue  { background: rgba(46,107,181,0.1); color: var(--blue); }
+  .tag-amber { background: rgba(184,114,10,0.1); color: var(--amber); }
+  .tag-red   { background: rgba(196,43,71,0.1); color: var(--red); }
+  .tag-gray  { background: rgba(138,127,114,0.1); color: var(--muted); }
+  .highlight-row td { background: rgba(196,43,71,0.04); }
+  .block-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 12px; overflow: hidden; box-shadow: 0 1px 4px rgba(42,36,32,0.05); }
+  .block-header { display: grid; grid-template-columns: 1fr auto auto auto; align-items: center; gap: 12px; padding: 13px 18px; background: var(--beige); cursor: pointer; user-select: none; }
+  .block-name { font-weight: 600; font-size: 14px; }
+  .block-score { font-weight: 700; font-size: 18px; }
+  .block-trend { font-size: 12px; font-weight: 600; }
+  .block-priority { font-size: 11px; font-weight: 700; letter-spacing: 1px; }
+  .block-body { padding: 18px 20px; display: none; background: #FDFCFA; }
+  .block-body.open { display: block; }
+  .sub-row { display: flex; justify-content: space-between; align-items: center; padding: 7px 0; border-bottom: 1px solid var(--border); font-size: 13px; }
+  .sub-row:last-child { border-bottom: none; }
+  .sub-name { color: var(--muted); }
+  .sub-val { font-weight: 600; }
+  .bar-wrap { height: 4px; background: rgba(42,36,32,0.08); border-radius: 2px; margin-top: 3px; width: 100%; }
+  .bar-fill { height: 4px; border-radius: 2px; }
+  .review-box { background: rgba(46,107,181,0.05); border-left: 3px solid var(--blue); padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 14px 0 8px; font-size: 13px; line-height: 1.6; }
+  .problem-box { background: rgba(196,43,71,0.05); border-left: 3px solid var(--red); padding: 12px 16px; border-radius: 0 8px 8px 0; margin-bottom: 14px; font-size: 13px; line-height: 1.6; }
+  .ai-title { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--sage); font-weight: 700; margin-bottom: 8px; }
+  .ai-item { background: var(--sage-light); border: 1px solid rgba(106,158,122,0.2); border-radius: 8px; padding: 11px 14px; margin-bottom: 8px; font-size: 13px; }
+  .ai-tag { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 2px 8px; border-radius: 4px; margin-bottom: 5px; background: rgba(106,158,122,0.15); color: var(--sage); }
+  .ai-tag.strat { background: rgba(58,158,111,0.12); color: var(--green); }
+  .qual-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .qual-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; box-shadow: 0 1px 4px rgba(42,36,32,0.05); }
+  .qual-card h4 { font-size: 12px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 14px; font-weight: 700; }
+  .qual-item { display: flex; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 13px; line-height: 1.5; }
+  .qual-item:last-child { border-bottom: none; }
+  .qual-num { color: var(--pink); font-weight: 700; min-width: 18px; }
+  .quote-block { background: rgba(196,43,71,0.05); border-left: 3px solid var(--red); border-radius: 0 8px 8px 0; padding: 12px 16px; margin-top: 12px; font-style: italic; font-size: 12px; color: var(--muted); line-height: 1.6; }
+  .history-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .hist-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 14px 12px; text-align: center; box-shadow: 0 1px 3px rgba(42,36,32,0.04); }
+  .hist-period { font-size: 11px; color: var(--muted); margin-bottom: 6px; }
+  .hist-val { font-family: 'DM Serif Display', serif; font-size: 24px; }
+  .hist-delta { font-size: 11px; margin-top: 4px; font-weight: 600; }
+  .hist-card.current { border-color: rgba(200,19,74,0.3); background: rgba(200,19,74,0.05); }
+  .hist-card.current .hist-val { color: var(--pink); }
+  .critical-card { background: var(--card); border: 1px solid rgba(196,43,71,0.2); border-radius: 12px; padding: 20px; margin-bottom: 12px; position: relative; box-shadow: 0 1px 4px rgba(42,36,32,0.05); }
+  .critical-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--red); border-radius: 12px 0 0 12px; }
+  .critical-num { font-family: 'DM Serif Display', serif; font-size: 32px; color: rgba(196,43,71,0.15); position: absolute; top: 12px; right: 20px; }
+  .critical-title { font-weight: 700; font-size: 15px; color: var(--red); margin-bottom: 8px; }
+  .critical-text { font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 6px; }
+  .critical-action { font-size: 13px; font-weight: 600; color: var(--blue); margin-top: 10px; }
+  .hypo-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 12px; overflow: hidden; box-shadow: 0 1px 4px rgba(42,36,32,0.05); }
+  .hypo-header { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 12px; padding: 14px 20px; background: var(--beige); cursor: pointer; user-select: none; }
+  .hypo-title-wrap { display: flex; align-items: center; gap: 12px; }
+  .hypo-letter { font-family: 'DM Serif Display', serif; font-size: 22px; color: var(--pink); min-width: 28px; }
+  .hypo-name { font-weight: 600; font-size: 14px; }
+  .hypo-badge { display: inline-flex; align-items: center; font-size: 11px; font-weight: 700; letter-spacing: 1px; padding: 4px 12px; border-radius: 100px; }
+  .hypo-badge.high { background: rgba(196,43,71,0.1); color: var(--red); }
+  .hypo-badge.mid  { background: rgba(184,114,10,0.1); color: var(--amber); }
+  .hypo-body { padding: 20px; display: none; background: #FDFCFA; }
+  .hypo-body.open { display: block; }
+  .hypo-context { background: rgba(46,107,181,0.05); border-left: 3px solid var(--blue); padding: 12px 16px; border-radius: 0 8px 8px 0; margin-bottom: 14px; font-size: 13px; line-height: 1.65; }
+  .hypo-actions { background: var(--sage-light); border: 1px solid rgba(106,158,122,0.2); border-radius: 8px; padding: 14px 16px; font-size: 13px; line-height: 1.65; }
+  .hypo-actions-title { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--sage); font-weight: 700; margin-bottom: 8px; }
+  .hypo-action-item { display: flex; gap: 8px; padding: 5px 0; border-bottom: 1px solid rgba(106,158,122,0.12); font-size: 13px; }
+  .hypo-action-item:last-child { border-bottom: none; }
+  .hypo-arrow { color: var(--sage); font-weight: 700; min-width: 14px; }
+  .unit-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 14px; }
+  .unit-mini { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 14px; box-shadow: 0 1px 3px rgba(42,36,32,0.04); }
+  .unit-mini-name { font-size: 12px; color: var(--muted); margin-bottom: 3px; }
+  .unit-mini-val { font-family: 'DM Serif Display', serif; font-size: 26px; }
+  .unit-mini-delta { font-size: 12px; font-weight: 600; margin-top: 2px; }
+  .segment-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .segment-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 18px; box-shadow: 0 1px 4px rgba(42,36,32,0.05); }
+  .segment-name { font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--muted); margin-bottom: 6px; font-weight: 600; }
+  .segment-val { font-family: 'DM Serif Display', serif; font-size: 28px; margin-bottom: 4px; }
+  .segment-prev { font-size: 12px; color: var(--muted); margin-bottom: 8px; }
+  .segment-note { font-size: 12px; color: var(--text); line-height: 1.5; }
+  .verdict-box { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 28px; font-size: 14px; line-height: 1.8; border-top: 3px solid var(--pink); color: var(--text); box-shadow: 0 2px 8px rgba(42,36,32,0.06); }
+  .metric-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 10px; }
+  .metric-block { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px; box-shadow: 0 1px 4px rgba(42,36,32,0.05); }
+  .metric-block-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+  .metric-block-val { font-family: 'DM Serif Display', serif; font-size: 24px; margin-bottom: 4px; }
+  .metric-block-note { font-size: 12px; color: var(--muted); line-height: 1.4; }
+  .section-title { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--sage); font-weight: 700; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+  .chevron { color: var(--muted); font-size: 12px; transition: transform 0.2s; }
+  .chevron.open { transform: rotate(180deg); }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .imp-rank { font-family: 'DM Serif Display', serif; font-size: 18px; color: var(--pink); text-align: center; }
+  .imp-up { color: var(--red); font-weight: 600; }
+  .imp-down { color: var(--green); font-weight: 600; }
+  .imp-stable { color: var(--muted); font-weight: 600; }
+  @media (max-width: 640px) {
+    .kpi-grid { grid-template-columns: 1fr 1fr; }
+    .metric-row { grid-template-columns: 1fr; }
+    .qual-grid, .two-col { grid-template-columns: 1fr; }
+    .history-grid { grid-template-columns: repeat(3, 1fr); }
+    .cover h1 { font-size: 30px; }
+    .block-header { grid-template-columns: 1fr auto auto; }
+    .block-priority { display: none; }
+    .unit-grid { grid-template-columns: 1fr 1fr; }
+    .segment-grid { grid-template-columns: 1fr; }
+    .tabs-nav { padding: 0 12px; }
+    .tab-btn { padding: 12px 14px; }
+  }
+</style>
+</head>
+<body>
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-label">Quarks · HR Analytics · eNPS & Engagement</div>
+  <h1>eNPS & Engagement Звіт</h1>
+  <div class="cover-unit">Back Office · H1 2026</div>
+  <div class="cover-meta">Аналітичний звіт для HR Lead / C-level · 28 травня 2026 · Конфіденційно</div>
+  <div class="cover-badges">
+    <span class="badge">eNPS & Engagement</span>
+    <span class="badge">H2 2025 → H1 2026</span>
+    <span class="badge">78.26% eNPS</span>
+    <span class="badge">▼ −7.45пп за цикл</span>
+    <span class="badge">✦ 0 Детракторів</span>
+    <span class="badge">Participation 92%</span>
+  </div>
+</div>
+<!-- TABS NAV -->
+<div class="tabs-nav">
+  <button class="tab-btn active" onclick="showTab('summary')">Executive Summary</button>
+  <button class="tab-btn" onclick="showTab('units')">Юніти</button>
+  <button class="tab-btn" onclick="showTab('blocks')">Блоки здоров'я</button>
+  <button class="tab-btn" onclick="showTab('priorities')">Пріоритети</button>
+  <button class="tab-btn" onclick="showTab('hypotheses')">Гіпотези</button>
+  <button class="tab-btn" onclick="showTab('forecasts')">Прогнози & Вердикт</button>
+</div>
+<!-- TAB 1 · EXECUTIVE SUMMARY -->
+<div id="tab-summary" class="tab-pane active">
+<div class="container">
+  <div class="section">
+    <div class="section-title">Ключові метрики Back Office H1 2026</div>
+    <div class="kpi-grid">
+      <div class="kpi-card"><div class="kpi-value">78.26%</div><div class="kpi-label">eNPS Back Office<br>H1 2026</div></div>
+      <div class="kpi-card"><div class="kpi-value" style="color:var(--red)">−7.45пп</div><div class="kpi-label">зміна vs<br>H2 2025 (85.71%)</div></div>
+      <div class="kpi-card"><div class="kpi-value" style="color:var(--green)">92%</div><div class="kpi-label">Participation<br>23 з 25 респондентів</div></div>
+      <div class="kpi-card"><div class="kpi-value" style="color:var(--green)">0</div><div class="kpi-label">Детракторів<br>унікально серед юнітів</div></div>
+    </div>
+    <div class="kpi-grid">
+      <div class="kpi-card"><div class="kpi-value" style="color:var(--green)">18 осіб</div><div class="kpi-label">Промоутери<br>78.26%</div></div>
+      <div class="kpi-card"><div class="kpi-value" style="color:var(--amber)">5 осіб</div><div class="kpi-label">Нейтральні<br>21.74%</div></div>
+      <div class="kpi-card"><div class="kpi-value" style="color:var(--blue)">9.3</div><div class="kpi-label">CSR<br>сервісний рейтинг</div></div>
+      <div class="kpi-card"><div class="kpi-value" style="color:var(--amber)">#3</div><div class="kpi-label">місце серед юнітів<br>вище середнього Quarks</div></div>
+    </div>
+  </div>
+  <div class="section">
+    <div class="section-title">Що відбулось: ситуаційний аналіз Back Office</div>
+    <div class="risk-banner">
+      <div class="risk-label">Головний сигнал</div>
+      <div class="risk-text"><strong>Back Office падає зі своєї лідерської позиції, але ще не в кризі.</strong> Два послідовних падіння: H1 2025 (~90.27%) → H2 2025 (85.71%) → H1 2026 (78.26%). При цьому 0 детракторів і 92% participation — люди залучені і ще готові говорити. Це вікно можливостей, а не кризовий сигнал.</div>
+    </div>
+    <div style="margin-top:16px">
+      <div class="metric-row">
+        <div class="metric-block"><div class="metric-block-label">OKR стресор</div><div class="metric-block-val" style="color:var(--red)">Формальність</div><div class="metric-block-note">Детрактор Back Office: «OKR не завжди сприймаються командами як реальний робочий інструмент, а швидше як формальність». Промоутери також вказують на недостатню підготовку rollout-процесу.</div></div>
+        <div class="metric-block"><div class="metric-block-label">Кар'єрний стресор</div><div class="metric-block-val" style="color:var(--red)">52.2% «ні»</div><div class="metric-block-note">52.2% Back Office не бачать чіткого кар'єрного шляху. Прагнення до розвитку — найбільше падіння серед блоків: −4.31пп до 84.69%. Back Office IC-функції потребують явного Career Ladder.</div></div>
+        <div class="metric-block"><div class="metric-block-label">Спільнота</div><div class="metric-block-val" style="color:var(--amber)">52.2% «ні»</div><div class="metric-block-note">52.2% незадоволені кількістю тімбілдингів. Внутрішні спільноти — найслабший блок: 73.60%. Cross-team communication згадують і промоутери (як зону для покращення), і нейтральні (як pain).</div></div>
+      </div>
+    </div>
+    <div class="green-banner">
+      <div class="info-label" style="color:var(--sage)">Унікальна перевага Back Office</div>
+      <div class="risk-text"><strong>0 детракторів</strong> — жодного активно незадоволеного. Жоден інший юніт Quarks цього не показав. Це не тривіально: це означає, що навіть незадоволені люди залишаються нейтральними, а не йдуть або шкодять репутації. Але це також означає, що <strong>5 нейтральних — це потенційні детрактори</strong> якщо ключові питання не адресувати.</div>
+    </div>
+    <div class="info-banner">
+      <div class="info-label">Cross-team tension</div>
+      <div class="risk-text">Back Office — сервісна функція, яка взаємодіє з усіма юнітами. Коли sync з продуктовими командами слабкий — це впливає і на якість роботи, і на відчуття значущості. Cross-team communication згадали незалежно promoter і neutral-респонденти. <strong>Це не персональний конфлікт — це відсутність структури взаємодії.</strong></div>
+    </div>
+  </div>
+  <div class="section">
+    <div class="section-title">Динаміка eNPS Back Office (3 хвилі)</div>
+    <div class="history-grid">
+      <div class="hist-card"><div class="hist-period">H1 2025</div><div class="hist-val" style="color:var(--green)">90.27%</div><div class="hist-delta" style="color:var(--muted)">Пік. Лідер компанії.</div></div>
+      <div class="hist-card"><div class="hist-period">H2 2025</div><div class="hist-val" style="color:var(--amber)">85.71%</div><div class="hist-delta" style="color:var(--amber)">▼ −4.56пп</div></div>
+      <div class="hist-card current"><div class="hist-period">H1 2026</div><div class="hist-val">78.26%</div><div class="hist-delta" style="color:var(--red)">▼ −7.45пп</div></div>
+    </div>
+    <div style="margin-top:10px;padding:10px 14px;background:rgba(255,69,96,0.05);border-radius:8px;font-size:13px;color:var(--muted)"><strong style="color:var(--text)">Прискорення падіння: −4.56пп → −7.45пп.</strong> Back Office впав нижче середнього Quarks (75.62%) вперше в спостережуваній історії, хоча все ще вище. Загальний діапазон від піку: −12.01пп. Тренд потребує уваги до наступного циклу.</div>
+  </div>
+  <div class="section">
+    <div class="section-title">Три дії, яких не можна відкладати</div>
+    <div class="critical-card"><div class="critical-num">01</div><div class="critical-title">Career path conversation для кожного: до кінця Q2</div><div class="critical-text">52.2% Back Office не бачать чіткого кар'єрного шляху. Прагнення до розвитку — найбільше падіння блоку (−4.31пп). При хорошому загальному eNPS людина ще не йде, але вже думає. IC-функції в HR, Finance, Communications, Operations не мають явних треків — і люди відчувають це.</div><div class="critical-action">→ Конкретна розмова в кожному 1:1 до кінця Q2. Не «де ти бачиш себе», а «що тобі потрібно і що компанія може запропонувати». Career Ladder для Back Office IC-ролей — дедлайн публікації: кінець H1 2026. Власник: HR Lead.</div></div>
+    <div class="critical-card"><div class="critical-num">02</div><div class="critical-title">OKR quality workshop: не про правила, а про зміст</div><div class="critical-text">Детрактор Back Office сформулював чітко: OKR сприймаються як формальність. Промоутери також кажуть, що rollout потребує кращої підготовки. Це не антагонізм до системи — це відсутність зв'язку між щоденними задачами Back Office і корпоративними OKR. Сервісна функція особливо вразлива: складно бачити свій вплив на бізнес-метрики.</div><div class="critical-action">→ Back Office OKR workshop: не «що таке OKR», а «як задачі нашої функції рухають company OKRs». Структурована підготовка перед наступним OKR-циклом. Власник: Team Leads + HR Lead.</div></div>
+    <div class="critical-card"><div class="critical-num">03</div><div class="critical-title">Back Office team event: спільнота — не luxury, а необхідність</div><div class="critical-text">52.2% відповіли «ні» на кількість тімбілдингів. Внутрішні спільноти — найслабший блок (73.60%). Для Back Office, де люди розподілені між різними функціями (HR, Finance, Ops, Legal, Compliance, Communications), спільний захід — це і про команду, і про cross-team sync в безпечному середовищі.</div><div class="critical-action">→ Один офлайн Back Office team event до кінця H1 2026. Формат: cross-functional, тобто всі функції разом, а не по окремих командах. Паралельно — зафіксувати регулярний квартальний cadence.</div></div>
+    <div class="green-banner">
+      <div class="info-label" style="color:var(--sage)">Стабілізуючі фактори Back Office</div>
+      <div class="risk-text"><strong>0 детракторів</strong> — унікальна позиція в усьому Quarks.<br><strong>Participation 92% (23/25)</strong> — команда залучена і готова говорити.<br><strong>Більшість блоків вище 85%</strong> — Задоволення (90.67%), Партнерство (91.51%), Менеджер (89.97%), Лояльність (88.03%).<br><strong>CSR 9.3</strong> — сервісна якість Back Office залишається надійним партнером для бізнесу.<br><strong>78.26% vs 75.62%</strong> — Back Office вище середнього Quarks навіть у найнижчій точці.</div>
+    </div>
+  </div>
+</div>
+</div>
+<!-- TAB 2 · ЮНІТИ -->
+<div id="tab-units" class="tab-pane">
+<div class="container">
+  <div class="section">
+    <div class="section-title">Позиція Back Office серед юнітів H1 2026</div>
+    <div class="info-banner" style="margin-bottom:20px"><div class="info-label">Контекст</div><div class="risk-text">Back Office eNPS 78.26% — <strong>#3 з 6 юнітів, вище середнього Quarks (75.62%)</strong>. Але динаміка тривожна: раніше Back Office був лідером або co-лідером. За два цикли впав на −12.01пп від піку (90.27% → 78.26%). Для сервісної функції, яка є backbone усього бізнесу, ця траєкторія потребує пояснення і реакції.</div></div>
+    <div class="unit-grid">
+      <div class="unit-mini" style="border-color:rgba(34,201,122,0.3)"><div class="unit-mini-name">Soportio</div><div class="unit-mini-val" style="color:var(--green)">88.89%</div><div class="unit-mini-delta" style="color:var(--green)">▲ +10.76пп · #1</div></div>
+      <div class="unit-mini"><div class="unit-mini-name">Social Discovery</div><div class="unit-mini-val" style="color:var(--blue)">79.49%</div><div class="unit-mini-delta" style="color:var(--muted)">→ −1.46пп · #2</div></div>
+      <div class="unit-mini" style="border-color:rgba(245,166,35,0.2)"><div class="unit-mini-name">Back Office</div><div class="unit-mini-val" style="color:var(--amber)">78.26%</div><div class="unit-mini-delta" style="color:var(--amber)">▼ −7.45пп · #3</div></div>
+      <div class="unit-mini" style="border-color:rgba(255,69,96,0.2)"><div class="unit-mini-name">Moderation</div><div class="unit-mini-val" style="color:var(--red)">66.67%</div><div class="unit-mini-delta" style="color:var(--red)">▼ −15.94пп · #4</div></div>
+      <div class="unit-mini" style="border-color:rgba(255,69,96,0.2)"><div class="unit-mini-name">Internal PaaS</div><div class="unit-mini-val" style="color:var(--red)">62.16%</div><div class="unit-mini-delta" style="color:var(--red)">▼ −4.15пп · #5</div></div>
+      <div class="unit-mini" style="border-color:rgba(255,69,96,0.4);background:rgba(255,69,96,0.04)"><div class="unit-mini-name">Affemity</div><div class="unit-mini-val" style="color:var(--red)">60.87%</div><div class="unit-mini-delta" style="color:var(--red)">▼ −27.13пп · #6</div></div>
+    </div>
+    <table>
+      <thead><tr><th>Юніт / Team</th><th>H2 2025</th><th>H1 2026</th><th>Δ</th><th>Статус</th><th>Коментар</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Soportio</strong></td><td style="color:var(--muted)">78.13%</td><td><strong style="color:var(--green)">88.89%</strong></td><td style="color:var(--green);font-weight:700">+10.76пп</td><td><span class="tag tag-green">Лідер</span></td><td style="color:var(--muted);font-size:12px">Значне покращення. Автономна культура, зрілі процеси.</td></tr>
+        <tr><td>Social Discovery</td><td style="color:var(--muted)">80.95%</td><td><strong style="color:var(--blue)">79.49%</strong></td><td style="color:var(--muted);font-weight:600">−1.46пп</td><td><span class="tag tag-blue">Норма</span></td><td style="color:var(--muted);font-size:12px">Стабільно.</td></tr>
+        <tr><td>Back Office</td><td style="color:var(--muted)">85.71%</td><td><strong style="color:var(--amber)">78.26%</strong></td><td style="color:var(--amber);font-weight:700">−7.45пп</td><td><span class="tag tag-amber">Увага</span></td><td style="color:var(--muted);font-size:12px">Падіння з позиції лідера. Participation 92%.</td></tr>
+        <tr><td>Moderation</td><td style="color:var(--muted)">82.61%</td><td><strong style="color:var(--red)">66.67%</strong></td><td style="color:var(--red);font-weight:700">−15.94пп</td><td><span class="tag tag-red">Ризик</span></td><td style="color:var(--muted);font-size:12px">Різке падіння.</td></tr>
+        <tr><td>Internal PaaS</td><td style="color:var(--muted)">66.31%</td><td><strong style="color:var(--red)">62.16%</strong></td><td style="color:var(--red);font-weight:700">−4.15пп</td><td><span class="tag tag-red">Ризик</span></td><td style="color:var(--muted);font-size:12px">Продовжує падіння.</td></tr>
+        <tr class="highlight-row"><td><strong>Affemity</strong></td><td style="color:var(--muted)">88.00%</td><td><strong style="color:var(--red)">60.87%</strong></td><td style="color:var(--red);font-weight:700">−27.13пп</td><td><span class="tag tag-red">Критично</span></td><td style="color:var(--muted);font-size:12px">Критична просадка.</td></tr>
+        <tr><td style="color:var(--muted)">Quarks All</td><td style="color:var(--muted)">80.39%</td><td style="color:var(--muted)">75.62%</td><td style="color:var(--amber);font-weight:600">−4.77пп</td><td><span class="tag tag-gray">Загальний</span></td><td style="color:var(--muted);font-size:12px">—</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="section">
+    <div class="section-title">Сегментний аналіз</div>
+    <div class="segment-grid">
+      <div class="segment-card" style="border-color:rgba(245,166,35,0.3)"><div class="segment-name">Core Office Team</div><div class="segment-val" style="color:var(--amber)">75.45%</div><div class="segment-prev" style="color:var(--red)">▼ −6.20пп</div><div class="segment-note">Безпосередній контекст обстрілів і мобілізаційної тривоги.</div></div>
+      <div class="segment-card" style="border-color:rgba(34,201,122,0.3)"><div class="segment-name">Core Remote Ukraine</div><div class="segment-val" style="color:var(--green)">~80%+</div><div class="segment-prev" style="color:var(--green)">→ Стабільно два цикли</div><div class="segment-note">Organizational anchor. Гнучкість формату слугує буфером.</div></div>
+      <div class="segment-card" style="border-color:rgba(245,166,35,0.3)"><div class="segment-name">Core Remote Abroad</div><div class="segment-val" style="color:var(--amber)">69.23%</div><div class="segment-prev" style="color:var(--amber)">▼ −4.10пп</div><div class="segment-note">Відчуття відірваності + невизначеність щодо повернення.</div></div>
+    </div>
+  </div>
+</div>
+</div>
+<!-- TAB 3 · БЛОКИ ЗДОРОВ'Я -->
+<div id="tab-blocks" class="tab-pane">
+<div class="container">
+  <div class="section">
+    <div class="section-title">Зведена таблиця блоків · Back Office</div>
+    <table>
+      <thead><tr><th>Блок</th><th>H2 2025</th><th>H1 2026</th><th>Δ</th><th>Пріоритет</th></tr></thead>
+      <tbody>
+        <tr><td>Задоволення від роботи</td><td style="color:var(--muted)">92.41%</td><td style="color:var(--green);font-weight:600">90.67%</td><td style="color:var(--muted)">−1.74пп</td><td><span class="tag tag-gray">Моніторинг</span></td></tr>
+        <tr><td>Партнерство та взаємодія</td><td style="color:var(--muted)">93.92%</td><td style="color:var(--green);font-weight:600">91.51%</td><td style="color:var(--muted)">−2.41пп</td><td><span class="tag tag-gray">Моніторинг</span></td></tr>
+        <tr><td>Комунікація та відносини</td><td style="color:var(--muted)">90.19%</td><td style="color:var(--blue);font-weight:600">87.86%</td><td style="color:var(--amber)">−2.33пп</td><td><span class="tag tag-blue">Середній</span></td></tr>
+        <tr><td>Взаємодія з менеджером</td><td style="color:var(--muted)">92.73%</td><td style="color:var(--blue);font-weight:600">89.97%</td><td style="color:var(--amber)">−2.76пп</td><td><span class="tag tag-blue">Середній</span></td></tr>
+        <tr><td>Лояльність до компанії</td><td style="color:var(--muted)">90.51%</td><td style="color:var(--blue);font-weight:600">88.03%</td><td style="color:var(--amber)">−2.48пп</td><td><span class="tag tag-blue">Середній</span></td></tr>
+        <tr><td><strong>Визнання та відчуття цінності</strong></td><td style="color:var(--muted)">89.60%</td><td style="color:var(--amber);font-weight:600">86.12%</td><td style="color:var(--red);font-weight:700">−3.48пп ↓↓</td><td><span class="tag tag-amber">Високий</span></td></tr>
+        <tr><td><strong>Прагнення до розвитку</strong></td><td style="color:var(--muted)">89.00%</td><td style="color:var(--amber);font-weight:600">84.69%</td><td style="color:var(--red);font-weight:700">−4.31пп ↓↓↓</td><td><span class="tag tag-red">Критичний</span></td></tr>
+        <tr><td><strong>Ресурсний стан</strong></td><td style="color:var(--muted)">~80%</td><td style="color:var(--amber);font-weight:600">78.45%</td><td style="color:var(--amber)">↓</td><td><span class="tag tag-amber">Високий</span></td></tr>
+        <tr><td><strong>Внутрішні спільноти</strong></td><td style="color:var(--muted)">~76%</td><td style="color:var(--red);font-weight:600">73.60%</td><td style="color:var(--red);font-weight:700">↓↓</td><td><span class="tag tag-red">Критичний</span></td></tr>
+        <tr style="background:rgba(255,69,96,0.04)"><td><strong>eNPS Back Office</strong></td><td style="color:var(--muted)">85.71%</td><td style="color:var(--red);font-weight:700">78.26%</td><td style="color:var(--red);font-weight:700">−7.45пп ↓↓</td><td><span class="tag tag-red">Загальний</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="section">
+    <div class="section-title">Деталі по блоках · Back Office</div>
+    <div class="block-card">
+      <div class="block-header" onclick="toggle(this)"><div class="block-name">Прагнення до розвитку</div><div class="block-score" style="color:var(--red)">84.69%</div><div class="block-trend" style="color:var(--red)">▼ −4.31пп</div><div class="block-priority" style="color:var(--red)">КРИТИЧНИЙ <span class="chevron">▾</span></div></div>
+      <div class="block-body"><div class="review-box" style="margin-top:0"><strong>Найбільше падіння серед усіх блоків Back Office.</strong> 52.2% Back Office відповіли «скоріше ні» на питання про чіткість кар'єрного шляху.</div><div class="ai-title">Action Items</div><div class="ai-item"><div class="ai-tag">Тактична · до кінця Q2</div><br>Конкретна розмова в кожному 1:1. Career Ladder для Back Office IC-функцій.</div></div>
+    </div>
+    <div class="block-card">
+      <div class="block-header" onclick="toggle(this)"><div class="block-name">Внутрішні спільноти та тімбілдинги</div><div class="block-score" style="color:var(--red)">73.60%</div><div class="block-trend" style="color:var(--red)">▼ ↓↓</div><div class="block-priority" style="color:var(--red)">КРИТИЧНИЙ <span class="chevron">▾</span></div></div>
+      <div class="block-body"><div class="review-box" style="margin-top:0"><strong>Найнижчий блок Back Office.</strong> 52.2% відповіли «ні» на питання про кількість тімбілдингів.</div><div class="ai-title">Action Items</div><div class="ai-item"><div class="ai-tag">Тактична · до кінця H1 2026</div><br>Один офлайн Back Office team event — cross-functional.</div></div>
+    </div>
+    <div class="block-card">
+      <div class="block-header" onclick="toggle(this)"><div class="block-name">Визнання та відчуття цінності</div><div class="block-score" style="color:var(--amber)">86.12%</div><div class="block-trend" style="color:var(--red)">▼ −3.48пп</div><div class="block-priority" style="color:var(--amber)">ВИСОКИЙ <span class="chevron">▾</span></div></div>
+      <div class="block-body"><div class="review-box" style="margin-top:0">Друге за величиною падіння. Back Office — сервісна функція, внесок якої часто не видний у продуктових метриках.</div><div class="ai-title">Action Items</div><div class="ai-item"><div class="ai-tag">Тактична · 2 тижні</div><br>Конкретний публічний позитивний фідбек в cross-functional каналах — регулярно.</div></div>
+    </div>
+    <div class="block-card">
+      <div class="block-header" onclick="toggle(this)"><div class="block-name">Партнерство та взаємодія</div><div class="block-score" style="color:var(--green)">91.51%</div><div class="block-trend" style="color:var(--muted)">▼ −2.41пп</div><div class="block-priority" style="color:var(--muted)">МОНІТОРИНГ <span class="chevron">▾</span></div></div>
+      <div class="block-body"><div class="review-box" style="margin-top:0"><strong>Найсильніший блок Back Office.</strong> Колегіальна атмосфера, взаємна підтримка — стабільні. Зберігати цей актив.</div></div>
+    </div>
+    <div class="block-card">
+      <div class="block-header" onclick="toggle(this)"><div class="block-name">Задоволення від роботи</div><div class="block-score" style="color:var(--green)">90.67%</div><div class="block-trend" style="color:var(--muted)">▼ −1.74пп</div><div class="block-priority" style="color:var(--muted)">МОНІТОРИНГ <span class="chevron">▾</span></div></div>
+      <div class="block-body"><div class="review-box" style="margin-top:0"><strong>Найменше падіння, найміцніша основа.</strong> Люди задоволені своєю роботою. Саме тому 0 детракторів.</div></div>
+    </div>
+  </div>
+</div>
+</div>
+<!-- TAB 4 · ПРІОРИТЕТИ -->
+<div id="tab-priorities" class="tab-pane">
+<div class="container">
+  <div class="section">
+    <div class="section-title">Голоси Back Office: що кажуть люди</div>
+    <div class="qual-grid">
+      <div class="qual-card">
+        <h4 style="color:var(--green)">Промоутери (18 осіб) — що цінують</h4>
+        <div class="qual-item"><span class="qual-num">✦</span><span><strong>Атмосфера та команда</strong> — колегіальна культура, взаємна підтримка між функціями.</span></div>
+        <div class="qual-item"><span class="qual-num">✦</span><span><strong>Гнучкість і автономія</strong> — remote-формат, відсутність ліміту sick leave.</span></div>
+        <div class="qual-item"><span class="qual-num">⚠</span><span><strong>Але навіть промоутери говорять:</strong> відчуття перевантаження задачами та потреба в кращій підготовці OKR rollout.</span></div>
+        <div class="quote-block">«Важливо забезпечити кращу підготовку до впровадження OKR — команди мають відчувати, що беруть участь у процесі»</div>
+      </div>
+      <div class="qual-card">
+        <h4 style="color:var(--amber)">Нейтральні (5 осіб) — де болить</h4>
+        <div class="qual-item"><span class="qual-num">1.</span><span><strong>Cross-team комунікація</strong> — взаємодія між Back Office та продуктовими командами.</span></div>
+        <div class="qual-item"><span class="qual-num">2.</span><span><strong>Leave balance</strong> — питання планування відпусток.</span></div>
+        <div class="qual-item"><span class="qual-num">3.</span><span><strong>Referral-процес</strong> — непрозорість реферальної програми.</span></div>
+        <div class="qual-item"><span class="qual-num">💡</span><span><strong>Ці 5 людей визначають майбутнє eNPS.</strong> Якщо їхні питання не вирішити — eNPS може впасти до 60% за один цикл.</span></div>
+      </div>
+    </div>
+    <div style="margin-top:16px;background:var(--card);border:1px solid rgba(196,43,71,0.15);border-radius:12px;padding:20px">
+      <div style="font-size:11px;color:var(--red);text-transform:uppercase;letter-spacing:2px;font-weight:700;margin-bottom:10px">Голос єдиного детрактора Back Office</div>
+      <div class="quote-block" style="margin-top:0;font-size:13px;font-style:normal;color:var(--text)">«OKR не завжди сприймаються командами як реальний робочий інструмент, а швидше як формальність. Важливо, щоб OKR дійсно відображали реальні пріоритети і були зрозумілі кожному члену команди»</div>
+    </div>
+  </div>
+  <div class="section">
+    <div class="section-title">Пріоритети реагування · Back Office</div>
+    <div class="block-card">
+      <div class="block-header" onclick="toggle(this)" style="border-left:4px solid var(--red)"><div class="block-name" style="color:var(--red)">КРИТИЧНО — діяти до кінця Q2</div><div class="block-score" style="color:var(--red)">2 зони</div><div class="block-trend"></div><div><span class="chevron">▾</span></div></div>
+      <div class="block-body"><table><thead><tr><th>Зона</th><th>Чому критично</th><th>Рекомендовані дії</th></tr></thead><tbody><tr><td style="font-weight:600;color:var(--red)">Кар'єрний шлях</td><td style="font-size:12px;color:var(--muted)">52.2% «скоріше ні». −4.31пп — найбільше падіння блоку.</td><td style="font-size:12px">Career conversation у кожному 1:1. Career Ladder до кінця H1 2026.</td></tr><tr><td style="font-weight:600;color:var(--red)">OKR як формальність</td><td style="font-size:12px;color:var(--muted)">Детрактор і промоутери вказують на одне: Back Office не бачить зв'язку між своїми задачами і OKR.</td><td style="font-size:12px">Back Office OKR workshop до наступного циклу планування.</td></tr></tbody></table></div>
+    </div>
+    <div class="block-card">
+      <div class="block-header" onclick="toggle(this)" style="border-left:4px solid var(--green)"><div class="block-name" style="color:var(--green)">СИЛЬНІ СТОРОНИ — зберігати і масштабувати</div><div class="block-score" style="color:var(--green)">3 зони</div><div class="block-trend"></div><div><span class="chevron">▾</span></div></div>
+      <div class="block-body"><table><thead><tr><th>Зона</th><th>Чому важливо зберегти</th></tr></thead><tbody><tr><td style="font-weight:600;color:var(--green)">0 детракторів</td><td style="font-size:12px;color:var(--muted)">Рідкісна і цінна позиція. Жоден юніт Quarks цього не досяг.</td></tr><tr><td style="font-weight:600;color:var(--green)">Партнерство (91.51%)</td><td style="font-size:12px;color:var(--muted)">Найсильніший блок. Колегіальна культура між різними функціями — рідкісний organizational asset.</td></tr><tr><td style="font-weight:600;color:var(--green)">Participation 92%</td><td style="font-size:12px;color:var(--muted)">23/25 — майже повна участь. Свідчення довіри до процесу.</td></tr></tbody></table></div>
+    </div>
+  </div>
+</div>
+</div>
+<!-- TAB 5 · ГІПОТЕЗИ -->
+<div id="tab-hypotheses" class="tab-pane">
+<div class="container">
+  <div class="section">
+    <div class="section-title">Чому впав eNPS Back Office: 6 гіпотез</div>
+    <div class="hypo-card">
+      <div class="hypo-header" onclick="toggleHypo(this)"><div class="hypo-title-wrap"><span class="hypo-letter">А</span><span class="hypo-name">OKR сприймається як формальність, а не інструмент</span></div><div style="display:flex;gap:8px;align-items:center"><span class="hypo-badge high">Висока ймовірність</span><span class="chevron">▾</span></div></div>
+      <div class="hypo-body"><div class="hypo-context">Єдиний детрактор Back Office сформулював це прямо: «OKR не завжди сприймаються командами як реальний робочий інструмент, а швидше як формальність». Для Back Office-функцій особливо болюче: коли ти в HR, Finance або Legal — побачити прямий зв'язок між своєю роботою і продуктовими OKR складно без явного contribution mapping.</div><div class="hypo-actions"><div class="hypo-actions-title">Рекомендовані дії</div><div class="hypo-action-item"><span class="hypo-arrow">→</span><span>Back Office OKR workshop: «як задачі фінансів / HR / юриспруденції рухають company OKRs».</span></div><div class="hypo-action-item"><span class="hypo-arrow">→</span><span>Structured участь Back Office у формулюванні цілей перед наступним OKR-циклом.</span></div></div></div>
+    </div>
+    <div class="hypo-card">
+      <div class="hypo-header" onclick="toggleHypo(this)"><div class="hypo-title-wrap"><span class="hypo-letter">Б</span><span class="hypo-name">Кар'єрна невизначеність: IC-трек не видний</span></div><div style="display:flex;gap:8px;align-items:center"><span class="hypo-badge high">Висока ймовірність</span><span class="chevron">▾</span></div></div>
+      <div class="hypo-body"><div class="hypo-context">52.2% Back Office відповіли «скоріше ні» на питання про чіткість кар'єрного шляху. Прагнення до розвитку впало на −4.31пп — найбільше падіння серед усіх 9 блоків. Люди з амбіціями і досвідом не йдуть відразу — але починають дивитись навкруги.</div><div class="hypo-actions"><div class="hypo-actions-title">Рекомендовані дії</div><div class="hypo-action-item"><span class="hypo-arrow">→</span><span>Career Ladder для Back Office IC-функцій з чіткими критеріями рівнів. Дедлайн: кінець H1 2026.</span></div><div class="hypo-action-item"><span class="hypo-arrow">→</span><span>Конкретна розмова про розвиток у кожному 1:1 до кінця Q2.</span></div></div></div>
+    </div>
+    <div class="hypo-card">
+      <div class="hypo-header" onclick="toggleHypo(this)"><div class="hypo-title-wrap"><span class="hypo-letter">В</span><span class="hypo-name">Дефіцит cross-team sync: сервісна функція без зворотного зв'язку</span></div><div style="display:flex;gap:8px;align-items:center"><span class="hypo-badge high">Висока ймовірність</span><span class="chevron">▾</span></div></div>
+      <div class="hypo-body"><div class="hypo-context">Cross-team комунікація згадана незалежно і промоутерами, і нейтральними. Back Office є backbone бізнесу, але часто не отримує feedback про те, наскільки її робота впливає на результат.</div><div class="hypo-actions"><div class="hypo-actions-title">Рекомендовані дії</div><div class="hypo-action-item"><span class="hypo-arrow">→</span><span>Structured cross-team sync: регулярні точки взаємодії Back Office з продуктовими командами.</span></div></div></div>
+    </div>
+    <div class="hypo-card">
+      <div class="hypo-header" onclick="toggleHypo(this)"><div class="hypo-title-wrap"><span class="hypo-letter">Г</span><span class="hypo-name">Тімбілдинг-дефіцит: спільнота без клею</span></div><div style="display:flex;gap:8px;align-items:center"><span class="hypo-badge high">Висока ймовірність</span><span class="chevron">▾</span></div></div>
+      <div class="hypo-body"><div class="hypo-context">52.2% незадоволені кількістю тімбілдингів. Внутрішні спільноти — найнижчий блок: 73.60%. Back Office об'єднує функції, які в звичайному корпоративному контексті взагалі не є «однією командою».</div><div class="hypo-actions"><div class="hypo-actions-title">Рекомендовані дії</div><div class="hypo-action-item"><span class="hypo-arrow">→</span><span>Один офлайн Back Office team event до кінця H1 2026 — cross-functional.</span></div><div class="hypo-action-item"><span class="hypo-arrow">→</span><span>Квартальний cadence Back Office events починаючи з Q3 2026.</span></div></div></div>
+    </div>
+    <div class="hypo-card">
+      <div class="hypo-header" onclick="toggleHypo(this)"><div class="hypo-title-wrap"><span class="hypo-letter">Д</span><span class="hypo-name">Тиха перевантаженість: промоутери тримаються, але на межі</span></div><div style="display:flex;gap:8px;align-items:center"><span class="hypo-badge mid">Середня ймовірність</span><span class="chevron">▾</span></div></div>
+      <div class="hypo-body"><div class="hypo-context">Промоутери Back Office водночас повідомляють «відчуття перевантаження задачами». Back Office в умовах активного OKR-впровадження є першим адресатом операційних запитів з усіх юнітів.</div><div class="hypo-actions"><div class="hypo-actions-title">Рекомендовані дії</div><div class="hypo-action-item"><span class="hypo-arrow">→</span><span>Аудит завантаженості функцій. «Sacred time» для проактивної роботи.</span></div></div></div>
+    </div>
+    <div class="hypo-card">
+      <div class="hypo-header" onclick="toggleHypo(this)"><div class="hypo-title-wrap"><span class="hypo-letter">Е</span><span class="hypo-name">Акумуляція незадоволення за фасадом хорошого eNPS</span></div><div style="display:flex;gap:8px;align-items:center"><span class="hypo-badge mid">Середня ймовірність</span><span class="chevron">▾</span></div></div>
+      <div class="hypo-body"><div class="hypo-context">0 детракторів — але 5 нейтральних. Якщо хоча б 3 з них перейдуть у детрактори у H2 2026 — eNPS Back Office впаде з 78% до ~65% за один цикл.</div><div class="hypo-actions"><div class="hypo-actions-title">Рекомендовані дії</div><div class="hypo-action-item"><span class="hypo-arrow">→</span><span>Focused focus group з нейтральними Back Office (5 осіб): що конкретно тримає їх від промоутерства?</span></div></div></div>
+    </div>
+  </div>
+</div>
+</div>
+<!-- TAB 6 · ПРОГНОЗИ & ВЕРДИКТ -->
+<div id="tab-forecasts" class="tab-pane">
+<div class="container">
+  <div class="section">
+    <div class="section-title">Прогнози для Back Office H2 2026</div>
+    <table>
+      <thead><tr><th>Метрика</th><th>Без дій</th><th>При реагуванні</th><th>Що це означає</th></tr></thead>
+      <tbody>
+        <tr><td><strong>eNPS Back Office</strong></td><td style="color:var(--red);font-weight:700">~70–72%</td><td style="color:var(--green);font-weight:700">80–83%</td><td style="color:var(--muted);font-size:12px">При адресуванні кар'єри, OKR-якості і тімбілдингу — повернення до рівня лідера реалістичне за один цикл.</td></tr>
+        <tr><td>Детрактори</td><td style="color:var(--red);font-weight:700">2–4 особи</td><td style="color:var(--green);font-weight:700">0 або 1</td><td style="color:var(--muted);font-size:12px">Якщо 3 нейтральних перейдуть у детрактори — eNPS впаде до ~65%.</td></tr>
+        <tr><td>Прагнення до розвитку</td><td style="color:var(--red);font-weight:700">&lt; 82%</td><td style="color:var(--green);font-weight:700">87–89%</td><td style="color:var(--muted);font-size:12px">Career Ladder + conversation у 1:1 до кінця Q2 — достатньо.</td></tr>
+        <tr><td>Внутрішні спільноти</td><td style="color:var(--amber);font-weight:700">~72%</td><td style="color:var(--green);font-weight:700">78–80%</td><td style="color:var(--muted);font-size:12px">Один якісний team event + квартальний cadence — прогнозовано +5–7пп за цикл.</td></tr>
+        <tr><td>Participation</td><td style="color:var(--amber);font-weight:700">~87–88%</td><td style="color:var(--green);font-weight:700">92–95%</td><td style="color:var(--muted);font-size:12px">Без реакції participation починає падати.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="section">
+    <div class="section-title">Вердикт: Back Office H1 2026</div>
+    <div class="verdict-box">
+      Back Office eNPS 78.26% — <strong>не криза, але тривожний тренд</strong>. Команда впала зі своєї лідерської позиції (~90%) за два цикли. При цьому зберігає унікальне: 0 детракторів, 92% participation, і найсильніший блок Партнерства (91.51%) серед усіх юнітів. Люди залучені і готові говорити. Це рідкісне вікно.
+      <br><br>
+      <strong>Три root causes:</strong> (1) OKR як формальність — сервісна функція не бачить свого стратегічного внеску; (2) Кар'єрна невизначеність — IC-треки Back Office не сформовані; (3) Брак спільноти і cross-team visibility — 52.2% хочуть тімбілдингів.
+      <br><br>
+      <strong>Що реально вирішить ситуацію до H2 2026:</strong> (1) Career conversations у кожному 1:1 до кінця Q2 + Career Ladder до кінця H1; (2) Back Office OKR workshop перед наступним циклом; (3) Один офлайн cross-functional team event до кінця H1 2026. Три дії — жодна не потребує великого бюджету. Вікно можливостей відкрите. Але воно не вічне.
+    </div>
+  </div>
+</div>
+</div>
+<div style="text-align:center;color:var(--muted);font-size:12px;padding:12px 0 32px;border-top:1px solid var(--border);background:var(--dark)">
+  eNPS & Engagement Звіт · Back Office · H1 2026 · Конфіденційно · 28 травня 2026
+</div>
+<script>
+function showTab(id) {
+  document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  event.currentTarget.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+function toggle(header) {
+  const body = header.nextElementSibling;
+  const chevron = header.querySelector('.chevron');
+  const isOpen = body.classList.contains('open');
+  body.classList.toggle('open', !isOpen);
+  if (chevron) chevron.classList.toggle('open', !isOpen);
+}
+function toggleHypo(header) {
+  const body = header.nextElementSibling;
+  const chevron = header.querySelector('.chevron');
+  const isOpen = body.classList.contains('open');
+  body.classList.toggle('open', !isOpen);
+  if (chevron) chevron.classList.toggle('open', !isOpen);
+}
+</script>
+</body>
+</html>
