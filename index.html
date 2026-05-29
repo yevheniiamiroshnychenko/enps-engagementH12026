@@ -208,10 +208,10 @@
 <div class="tabs-nav">
   <button class="tab-btn active" onclick="showTab('summary')">Executive Summary</button>
   <button class="tab-btn" onclick="showTab('units')">Юніти</button>
-  <button class="tab-btn" onclick="showTab('blocks')">Блоки здоров'я</button>
+  <button class="tab-btn" onclick="showTab('blocks')">Блоки залученості</button>
   <button class="tab-btn" onclick="showTab('priorities')">Пріоритети</button>
   <button class="tab-btn" onclick="showTab('hypotheses')">Гіпотези</button>
-  <button class="tab-btn" onclick="showTab('forecasts')">Прогнози & Вердикт</button>
+  <button class="tab-btn" onclick="showTab('forecasts')">Прогнози та Вердикт</button>
 </div>
 <!-- TAB 1 · EXECUTIVE SUMMARY -->
 <div id="tab-summary" class="tab-pane active">
@@ -221,7 +221,7 @@
     <div class="kpi-grid">
       <div class="kpi-card"><div class="kpi-value">78.26%</div><div class="kpi-label">eNPS Back Office<br>H1 2026</div></div>
       <div class="kpi-card"><div class="kpi-value" style="color:var(--red)">−7.45пп</div><div class="kpi-label">зміна vs<br>H2 2025 (85.71%)</div></div>
-      <div class="kpi-card"><div class="kpi-value" style="color:var(--green)">92%</div><div class="kpi-label">Participation<br>23 з 25 респондентів</div></div>
+      <div class="kpi-card"><div class="kpi-value" style="color:var(--green)">92%</div><div class="kpi-label">Участь у опитуванні<br>23 з 25 респондентів</div></div>
       <div class="kpi-card"><div class="kpi-value" style="color:var(--green)">0</div><div class="kpi-label">Детракторів<br>унікально серед юнітів</div></div>
     </div>
     <div class="kpi-grid">
@@ -232,6 +232,25 @@
     </div>
   </div>
   <div class="section">
+    <div class="section-title">Методологія та умови читання</div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;box-shadow:0 1px 4px rgba(42,36,32,0.05)">
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px">
+        <div>
+          <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">Інструмент</div>
+          <div style="font-size:13px;line-height:1.6">eNPS-опитування + блоковий Engagement-індекс (9 блоків). Анонімне, двічі на рік. Хвиля: травень 2026.</div>
+        </div>
+        <div>
+          <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">Формула eNPS</div>
+          <div style="font-size:13px;line-height:1.6">% Промоутерів (9–10) − % Детракторів (0–6). Нейтральні (7–8) не входять. Діапазон: 0–100%.</div>
+        </div>
+        <div>
+          <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">Контакт</div>
+          <div style="font-size:13px;line-height:1.6">HR Lead · Quarks<br>Питання щодо методології та даних — через HR-команду.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section">
     <div class="section-title">Що відбулось: ситуаційний аналіз Back Office</div>
     <div class="risk-banner">
       <div class="risk-label">Головний сигнал</div>
@@ -239,8 +258,8 @@
     </div>
     <div style="margin-top:16px">
       <div class="metric-row">
-        <div class="metric-block"><div class="metric-block-label">OKR стресор</div><div class="metric-block-val" style="color:var(--red)">Формальність</div><div class="metric-block-note">Детрактор Back Office: «OKR не завжди сприймаються командами як реальний робочий інструмент, а швидше як формальність». Промоутери також вказують на недостатню підготовку rollout-процесу.</div></div>
-        <div class="metric-block"><div class="metric-block-label">Кар'єрний стресор</div><div class="metric-block-val" style="color:var(--red)">52.2% «ні»</div><div class="metric-block-note">52.2% Back Office не бачать чіткого кар'єрного шляху. Прагнення до розвитку — найбільше падіння серед блоків: −4.31пп до 84.69%. Back Office IC-функції потребують явного Career Ladder.</div></div>
+        <div class="metric-block"><div class="metric-block-label">OKR стресор</div><div class="metric-block-val" style="color:var(--red)">Формальність</div><div class="metric-block-note">Детрактор Back Office: «OKR не завжди сприймаються командами як реальний робочий інструмент, а швидше як формальність». Промоутери також вказують на недостатню підготовку процесу впровадження.</div></div>
+        <div class="metric-block"><div class="metric-block-label">Кар'єрний стресор</div><div class="metric-block-val" style="color:var(--red)">52.2% «ні»</div><div class="metric-block-note">52.2% Back Office не бачать чіткого кар'єрного шляху. Прагнення до розвитку — найбільше падіння серед блоків: −4.31пп до 84.69%. Back Office IC-функції (Individual Contributor — ролі без підлеглих) потребують явного Career Ladder.</div></div>
         <div class="metric-block"><div class="metric-block-label">Спільнота</div><div class="metric-block-val" style="color:var(--amber)">52.2% «ні»</div><div class="metric-block-note">52.2% незадоволені кількістю тімбілдингів. Внутрішні спільноти — найслабший блок: 73.60%. Cross-team communication згадують і промоутери (як зону для покращення), і нейтральні (як pain).</div></div>
       </div>
     </div>
@@ -249,8 +268,8 @@
       <div class="risk-text"><strong>0 детракторів</strong> — жодного активно незадоволеного. Жоден інший юніт Quarks цього не показав. Це не тривіально: це означає, що навіть незадоволені люди залишаються нейтральними, а не йдуть або шкодять репутації. Але це також означає, що <strong>5 нейтральних — це потенційні детрактори</strong> якщо ключові питання не адресувати.</div>
     </div>
     <div class="info-banner">
-      <div class="info-label">Cross-team tension</div>
-      <div class="risk-text">Back Office — сервісна функція, яка взаємодіє з усіма юнітами. Коли sync з продуктовими командами слабкий — це впливає і на якість роботи, і на відчуття значущості. Cross-team communication згадали незалежно promoter і neutral-респонденти. <strong>Це не персональний конфлікт — це відсутність структури взаємодії.</strong></div>
+      <div class="info-label">Міжкомандна напруженість</div>
+      <div class="risk-text">Back Office — сервісна функція, яка взаємодіє з усіма юнітами. Коли sync з продуктовими командами слабкий — це впливає і на якість роботи, і на відчуття значущості. Cross-team communication згадали незалежно промоутери і нейтральні респонденти. <strong>Це не персональний конфлікт — це відсутність структури взаємодії.</strong></div>
     </div>
   </div>
   <div class="section">
@@ -265,8 +284,8 @@
   <div class="section">
     <div class="section-title">Три дії, яких не можна відкладати</div>
     <div class="critical-card"><div class="critical-num">01</div><div class="critical-title">Career path conversation для кожного: до кінця Q2</div><div class="critical-text">52.2% Back Office не бачать чіткого кар'єрного шляху. Прагнення до розвитку — найбільше падіння блоку (−4.31пп). При хорошому загальному eNPS людина ще не йде, але вже думає. IC-функції в HR, Finance, Communications, Operations не мають явних треків — і люди відчувають це.</div><div class="critical-action">→ Конкретна розмова в кожному 1:1 до кінця Q2. Не «де ти бачиш себе», а «що тобі потрібно і що компанія може запропонувати». Career Ladder для Back Office IC-ролей — дедлайн публікації: кінець H1 2026. Власник: HR Lead.</div></div>
-    <div class="critical-card"><div class="critical-num">02</div><div class="critical-title">OKR quality workshop: не про правила, а про зміст</div><div class="critical-text">Детрактор Back Office сформулював чітко: OKR сприймаються як формальність. Промоутери також кажуть, що rollout потребує кращої підготовки. Це не антагонізм до системи — це відсутність зв'язку між щоденними задачами Back Office і корпоративними OKR. Сервісна функція особливо вразлива: складно бачити свій вплив на бізнес-метрики.</div><div class="critical-action">→ Back Office OKR workshop: не «що таке OKR», а «як задачі нашої функції рухають company OKRs». Структурована підготовка перед наступним OKR-циклом. Власник: Team Leads + HR Lead.</div></div>
-    <div class="critical-card"><div class="critical-num">03</div><div class="critical-title">Back Office team event: спільнота — не luxury, а необхідність</div><div class="critical-text">52.2% відповіли «ні» на кількість тімбілдингів. Внутрішні спільноти — найслабший блок (73.60%). Для Back Office, де люди розподілені між різними функціями (HR, Finance, Ops, Legal, Compliance, Communications), спільний захід — це і про команду, і про cross-team sync в безпечному середовищі.</div><div class="critical-action">→ Один офлайн Back Office team event до кінця H1 2026. Формат: cross-functional, тобто всі функції разом, а не по окремих командах. Паралельно — зафіксувати регулярний квартальний cadence.</div></div>
+    <div class="critical-card"><div class="critical-num">02</div><div class="critical-title">OKR quality workshop: не про правила, а про зміст</div><div class="critical-text">Детрактор Back Office сформулював чітко: OKR сприймаються як формальність. Промоутери також кажуть, що впровадження потребує кращої підготовки. Це не антагонізм до системи — це відсутність зв'язку між щоденними задачами Back Office і корпоративними OKR. Сервісна функція особливо вразлива: складно бачити свій вплив на бізнес-метрики.</div><div class="critical-action">→ Back Office OKR workshop: не «що таке OKR», а «як задачі нашої функції рухають company OKRs». Структурована підготовка перед наступним OKR-циклом. Власник: Team Leads + HR Lead.</div></div>
+    <div class="critical-card"><div class="critical-num">03</div><div class="critical-title">Back Office team event: спільнота — не luxury, а необхідність</div><div class="critical-text">52.2% відповіли «ні» на кількість тімбілдингів. Внутрішні спільноти — найслабший блок (73.60%). Для Back Office, де люди розподілені між різними функціями (HR, Finance, Ops, Legal, Compliance, Communications), спільний захід — це і про команду, і про міжкомандну синхронізацію в безпечному середовищі.</div><div class="critical-action">→ Один офлайн Back Office team event до кінця H1 2026. Формат: cross-functional, тобто всі функції разом, а не по окремих командах. Паралельно — зафіксувати регулярний квартальний ритм.</div></div>
     <div class="green-banner">
       <div class="info-label" style="color:var(--sage)">Стабілізуючі фактори Back Office</div>
       <div class="risk-text"><strong>0 детракторів</strong> — унікальна позиція в усьому Quarks.<br><strong>Participation 92% (23/25)</strong> — команда залучена і готова говорити.<br><strong>Більшість блоків вище 85%</strong> — Задоволення (90.67%), Партнерство (91.51%), Менеджер (89.97%), Лояльність (88.03%).<br><strong>CSR 9.3</strong> — сервісна якість Back Office залишається надійним партнером для бізнесу.<br><strong>78.26% vs 75.62%</strong> — Back Office вище середнього Quarks навіть у найнижчій точці.</div>
@@ -279,7 +298,7 @@
 <div class="container">
   <div class="section">
     <div class="section-title">Позиція Back Office серед юнітів H1 2026</div>
-    <div class="info-banner" style="margin-bottom:20px"><div class="info-label">Контекст</div><div class="risk-text">Back Office eNPS 78.26% — <strong>#3 з 6 юнітів, вище середнього Quarks (75.62%)</strong>. Але динаміка тривожна: раніше Back Office був лідером або co-лідером. За два цикли впав на −12.01пп від піку (90.27% → 78.26%). Для сервісної функції, яка є backbone усього бізнесу, ця траєкторія потребує пояснення і реакції.</div></div>
+    <div class="info-banner" style="margin-bottom:20px"><div class="info-label">Контекст</div><div class="risk-text">Back Office eNPS 78.26% — <strong>#3 з 6 юнітів, вище середнього Quarks (75.62%)</strong>. Але динаміка тривожна: раніше Back Office був лідером або співлідером. За два цикли впав на −12.01пп від піку (90.27% → 78.26%). Для сервісної функції, яка є хребтом усього бізнесу, ця траєкторія потребує пояснення і реакції.</div></div>
     <div class="unit-grid">
       <div class="unit-mini" style="border-color:rgba(34,201,122,0.3)"><div class="unit-mini-name">Soportio</div><div class="unit-mini-val" style="color:var(--green)">88.89%</div><div class="unit-mini-delta" style="color:var(--green)">▲ +10.76пп · #1</div></div>
       <div class="unit-mini"><div class="unit-mini-name">Social Discovery</div><div class="unit-mini-val" style="color:var(--blue)">79.49%</div><div class="unit-mini-delta" style="color:var(--muted)">→ −1.46пп · #2</div></div>
@@ -305,7 +324,7 @@
     <div class="section-title">Сегментний аналіз</div>
     <div class="segment-grid">
       <div class="segment-card" style="border-color:rgba(245,166,35,0.3)"><div class="segment-name">Core Office Team</div><div class="segment-val" style="color:var(--amber)">75.45%</div><div class="segment-prev" style="color:var(--red)">▼ −6.20пп</div><div class="segment-note">Безпосередній контекст обстрілів і мобілізаційної тривоги.</div></div>
-      <div class="segment-card" style="border-color:rgba(34,201,122,0.3)"><div class="segment-name">Core Remote Ukraine</div><div class="segment-val" style="color:var(--green)">~80%+</div><div class="segment-prev" style="color:var(--green)">→ Стабільно два цикли</div><div class="segment-note">Organizational anchor. Гнучкість формату слугує буфером.</div></div>
+      <div class="segment-card" style="border-color:rgba(34,201,122,0.3)"><div class="segment-name">Core Remote Ukraine</div><div class="segment-val" style="color:var(--green)">~80%+</div><div class="segment-prev" style="color:var(--green)">→ Стабільно два цикли</div><div class="segment-note">Організаційний якір. Гнучкість формату слугує буфером.</div></div>
       <div class="segment-card" style="border-color:rgba(245,166,35,0.3)"><div class="segment-name">Core Remote Abroad</div><div class="segment-val" style="color:var(--amber)">69.23%</div><div class="segment-prev" style="color:var(--amber)">▼ −4.10пп</div><div class="segment-note">Відчуття відірваності + невизначеність щодо повернення.</div></div>
     </div>
   </div>
@@ -316,6 +335,9 @@
 <div class="container">
   <div class="section">
     <div class="section-title">Зведена таблиця блоків · Back Office</div>
+    <div style="background:rgba(46,107,181,0.05);border-left:3px solid var(--blue);padding:10px 16px;border-radius:0 8px 8px 0;margin-bottom:14px;font-size:12px;color:var(--muted)">
+      <strong style="color:var(--text)">Як читати:</strong> кожен блок — середнє по підпитаннях групи (шкала 0–100%). ↓↓↓ = падіння &gt;4пп · ↓↓ = 2–4пп · ↓ = &lt;2пп.
+    </div>
     <table>
       <thead><tr><th>Блок</th><th>H2 2025</th><th>H1 2026</th><th>Δ</th><th>Пріоритет</th></tr></thead>
       <tbody>
@@ -367,12 +389,12 @@
         <h4 style="color:var(--green)">Промоутери (18 осіб) — що цінують</h4>
         <div class="qual-item"><span class="qual-num">✦</span><span><strong>Атмосфера та команда</strong> — колегіальна культура, взаємна підтримка між функціями.</span></div>
         <div class="qual-item"><span class="qual-num">✦</span><span><strong>Гнучкість і автономія</strong> — remote-формат, відсутність ліміту sick leave.</span></div>
-        <div class="qual-item"><span class="qual-num">⚠</span><span><strong>Але навіть промоутери говорять:</strong> відчуття перевантаження задачами та потреба в кращій підготовці OKR rollout.</span></div>
+        <div class="qual-item"><span class="qual-num">⚠</span><span><strong>Але навіть промоутери говорять:</strong> відчуття перевантаження задачами та потреба в кращій підготовці впровадження OKR.</span></div>
         <div class="quote-block">«Важливо забезпечити кращу підготовку до впровадження OKR — команди мають відчувати, що беруть участь у процесі»</div>
       </div>
       <div class="qual-card">
         <h4 style="color:var(--amber)">Нейтральні (5 осіб) — де болить</h4>
-        <div class="qual-item"><span class="qual-num">1.</span><span><strong>Cross-team комунікація</strong> — взаємодія між Back Office та продуктовими командами.</span></div>
+        <div class="qual-item"><span class="qual-num">1.</span><span><strong>Міжкомандна комунікація</strong> — взаємодія між Back Office та продуктовими командами.</span></div>
         <div class="qual-item"><span class="qual-num">2.</span><span><strong>Leave balance</strong> — питання планування відпусток.</span></div>
         <div class="qual-item"><span class="qual-num">3.</span><span><strong>Referral-процес</strong> — непрозорість реферальної програми.</span></div>
         <div class="qual-item"><span class="qual-num">💡</span><span><strong>Ці 5 людей визначають майбутнє eNPS.</strong> Якщо їхні питання не вирішити — eNPS може впасти до 60% за один цикл.</span></div>
@@ -391,7 +413,7 @@
     </div>
     <div class="block-card">
       <div class="block-header" onclick="toggle(this)" style="border-left:4px solid var(--green)"><div class="block-name" style="color:var(--green)">СИЛЬНІ СТОРОНИ — зберігати і масштабувати</div><div class="block-score" style="color:var(--green)">3 зони</div><div class="block-trend"></div><div><span class="chevron">▾</span></div></div>
-      <div class="block-body"><table><thead><tr><th>Зона</th><th>Чому важливо зберегти</th></tr></thead><tbody><tr><td style="font-weight:600;color:var(--green)">0 детракторів</td><td style="font-size:12px;color:var(--muted)">Рідкісна і цінна позиція. Жоден юніт Quarks цього не досяг.</td></tr><tr><td style="font-weight:600;color:var(--green)">Партнерство (91.51%)</td><td style="font-size:12px;color:var(--muted)">Найсильніший блок. Колегіальна культура між різними функціями — рідкісний organizational asset.</td></tr><tr><td style="font-weight:600;color:var(--green)">Participation 92%</td><td style="font-size:12px;color:var(--muted)">23/25 — майже повна участь. Свідчення довіри до процесу.</td></tr></tbody></table></div>
+      <div class="block-body"><table><thead><tr><th>Зона</th><th>Чому важливо зберегти</th></tr></thead><tbody><tr><td style="font-weight:600;color:var(--green)">0 детракторів</td><td style="font-size:12px;color:var(--muted)">Рідкісна і цінна позиція. Жоден юніт Quarks цього не досяг.</td></tr><tr><td style="font-weight:600;color:var(--green)">Партнерство (91.51%)</td><td style="font-size:12px;color:var(--muted)">Найсильніший блок. Колегіальна культура між різними функціями — рідкісний організаційна перевага.</td></tr><tr><td style="font-weight:600;color:var(--green)">Participation 92%</td><td style="font-size:12px;color:var(--muted)">23/25 — майже повна участь. Свідчення довіри до процесу.</td></tr></tbody></table></div>
     </div>
   </div>
 </div>
@@ -403,15 +425,15 @@
     <div class="section-title">Чому впав eNPS Back Office: 6 гіпотез</div>
     <div class="hypo-card">
       <div class="hypo-header" onclick="toggleHypo(this)"><div class="hypo-title-wrap"><span class="hypo-letter">А</span><span class="hypo-name">OKR сприймається як формальність, а не інструмент</span></div><div style="display:flex;gap:8px;align-items:center"><span class="hypo-badge high">Висока ймовірність</span><span class="chevron">▾</span></div></div>
-      <div class="hypo-body"><div class="hypo-context">Єдиний детрактор Back Office сформулював це прямо: «OKR не завжди сприймаються командами як реальний робочий інструмент, а швидше як формальність». Для Back Office-функцій особливо болюче: коли ти в HR, Finance або Legal — побачити прямий зв'язок між своєю роботою і продуктовими OKR складно без явного contribution mapping.</div><div class="hypo-actions"><div class="hypo-actions-title">Рекомендовані дії</div><div class="hypo-action-item"><span class="hypo-arrow">→</span><span>Back Office OKR workshop: «як задачі фінансів / HR / юриспруденції рухають company OKRs».</span></div><div class="hypo-action-item"><span class="hypo-arrow">→</span><span>Structured участь Back Office у формулюванні цілей перед наступним OKR-циклом.</span></div></div></div>
+      <div class="hypo-body"><div class="hypo-context">Єдиний детрактор Back Office сформулював це прямо: «OKR не завжди сприймаються командами як реальний робочий інструмент, а швидше як формальність». Для Back Office-функцій особливо болюче: коли ти в HR, Finance або Legal — побачити прямий зв'язок між своєю роботою і продуктовими OKR складно без явного карта внеску.</div><div class="hypo-actions"><div class="hypo-actions-title">Рекомендовані дії</div><div class="hypo-action-item"><span class="hypo-arrow">→</span><span>Back Office OKR workshop: «як задачі фінансів / HR / юриспруденції рухають company OKRs».</span></div><div class="hypo-action-item"><span class="hypo-arrow">→</span><span>Structured участь Back Office у формулюванні цілей перед наступним OKR-циклом.</span></div></div></div>
     </div>
     <div class="hypo-card">
-      <div class="hypo-header" onclick="toggleHypo(this)"><div class="hypo-title-wrap"><span class="hypo-letter">Б</span><span class="hypo-name">Кар'єрна невизначеність: IC-трек не видний</span></div><div style="display:flex;gap:8px;align-items:center"><span class="hypo-badge high">Висока ймовірність</span><span class="chevron">▾</span></div></div>
+      <div class="hypo-header" onclick="toggleHypo(this)"><div class="hypo-title-wrap"><span class="hypo-letter">Б</span><span class="hypo-name">Кар'єрна невизначеність: трек Individual Contributor не видний</span></div><div style="display:flex;gap:8px;align-items:center"><span class="hypo-badge high">Висока ймовірність</span><span class="chevron">▾</span></div></div>
       <div class="hypo-body"><div class="hypo-context">52.2% Back Office відповіли «скоріше ні» на питання про чіткість кар'єрного шляху. Прагнення до розвитку впало на −4.31пп — найбільше падіння серед усіх 9 блоків. Люди з амбіціями і досвідом не йдуть відразу — але починають дивитись навкруги.</div><div class="hypo-actions"><div class="hypo-actions-title">Рекомендовані дії</div><div class="hypo-action-item"><span class="hypo-arrow">→</span><span>Career Ladder для Back Office IC-функцій з чіткими критеріями рівнів. Дедлайн: кінець H1 2026.</span></div><div class="hypo-action-item"><span class="hypo-arrow">→</span><span>Конкретна розмова про розвиток у кожному 1:1 до кінця Q2.</span></div></div></div>
     </div>
     <div class="hypo-card">
-      <div class="hypo-header" onclick="toggleHypo(this)"><div class="hypo-title-wrap"><span class="hypo-letter">В</span><span class="hypo-name">Дефіцит cross-team sync: сервісна функція без зворотного зв'язку</span></div><div style="display:flex;gap:8px;align-items:center"><span class="hypo-badge high">Висока ймовірність</span><span class="chevron">▾</span></div></div>
-      <div class="hypo-body"><div class="hypo-context">Cross-team комунікація згадана незалежно і промоутерами, і нейтральними. Back Office є backbone бізнесу, але часто не отримує feedback про те, наскільки її робота впливає на результат.</div><div class="hypo-actions"><div class="hypo-actions-title">Рекомендовані дії</div><div class="hypo-action-item"><span class="hypo-arrow">→</span><span>Structured cross-team sync: регулярні точки взаємодії Back Office з продуктовими командами.</span></div></div></div>
+      <div class="hypo-header" onclick="toggleHypo(this)"><div class="hypo-title-wrap"><span class="hypo-letter">В</span><span class="hypo-name">Дефіцит міжкомандну синхронізацію: сервісна функція без зворотного зв'язку</span></div><div style="display:flex;gap:8px;align-items:center"><span class="hypo-badge high">Висока ймовірність</span><span class="chevron">▾</span></div></div>
+      <div class="hypo-body"><div class="hypo-context">Міжкомандна комунікація згадана незалежно і промоутерами, і нейтральними. Back Office є хребтом бізнесу, але часто не отримує feedback про те, наскільки її робота впливає на результат.</div><div class="hypo-actions"><div class="hypo-actions-title">Рекомендовані дії</div><div class="hypo-action-item"><span class="hypo-arrow">→</span><span>Structured міжкомандну синхронізацію: регулярні точки взаємодії Back Office з продуктовими командами.</span></div></div></div>
     </div>
     <div class="hypo-card">
       <div class="hypo-header" onclick="toggleHypo(this)"><div class="hypo-title-wrap"><span class="hypo-letter">Г</span><span class="hypo-name">Тімбілдинг-дефіцит: спільнота без клею</span></div><div style="display:flex;gap:8px;align-items:center"><span class="hypo-badge high">Висока ймовірність</span><span class="chevron">▾</span></div></div>
@@ -419,11 +441,11 @@
     </div>
     <div class="hypo-card">
       <div class="hypo-header" onclick="toggleHypo(this)"><div class="hypo-title-wrap"><span class="hypo-letter">Д</span><span class="hypo-name">Тиха перевантаженість: промоутери тримаються, але на межі</span></div><div style="display:flex;gap:8px;align-items:center"><span class="hypo-badge mid">Середня ймовірність</span><span class="chevron">▾</span></div></div>
-      <div class="hypo-body"><div class="hypo-context">Промоутери Back Office водночас повідомляють «відчуття перевантаження задачами». Back Office в умовах активного OKR-впровадження є першим адресатом операційних запитів з усіх юнітів.</div><div class="hypo-actions"><div class="hypo-actions-title">Рекомендовані дії</div><div class="hypo-action-item"><span class="hypo-arrow">→</span><span>Аудит завантаженості функцій. «Sacred time» для проактивної роботи.</span></div></div></div>
+      <div class="hypo-body"><div class="hypo-context">Промоутери Back Office водночас повідомляють «відчуття перевантаження задачами». Back Office в умовах активного OKR-впровадження є першим адресатом операційних запитів з усіх юнітів.</div><div class="hypo-actions"><div class="hypo-actions-title">Рекомендовані дії</div><div class="hypo-action-item"><span class="hypo-arrow">→</span><span>Аудит завантаженості функцій. «Захищений час» (sacred time) для проактивної роботи.</span></div></div></div>
     </div>
     <div class="hypo-card">
       <div class="hypo-header" onclick="toggleHypo(this)"><div class="hypo-title-wrap"><span class="hypo-letter">Е</span><span class="hypo-name">Акумуляція незадоволення за фасадом хорошого eNPS</span></div><div style="display:flex;gap:8px;align-items:center"><span class="hypo-badge mid">Середня ймовірність</span><span class="chevron">▾</span></div></div>
-      <div class="hypo-body"><div class="hypo-context">0 детракторів — але 5 нейтральних. Якщо хоча б 3 з них перейдуть у детрактори у H2 2026 — eNPS Back Office впаде з 78% до ~65% за один цикл.</div><div class="hypo-actions"><div class="hypo-actions-title">Рекомендовані дії</div><div class="hypo-action-item"><span class="hypo-arrow">→</span><span>Focused focus group з нейтральними Back Office (5 осіб): що конкретно тримає їх від промоутерства?</span></div></div></div>
+      <div class="hypo-body"><div class="hypo-context">0 детракторів — але 5 нейтральних. Якщо хоча б 3 з них перейдуть у детрактори у H2 2026 — eNPS Back Office впаде з 78% до ~65% за один цикл.</div><div class="hypo-actions"><div class="hypo-actions-title">Рекомендовані дії</div><div class="hypo-action-item"><span class="hypo-arrow">→</span><span>Фокус-група з нейтральними Back Office (5 осіб): що конкретно тримає їх від промоутерства?</span></div></div></div>
     </div>
   </div>
 </div>
@@ -439,7 +461,7 @@
         <tr><td><strong>eNPS Back Office</strong></td><td style="color:var(--red);font-weight:700">~70–72%</td><td style="color:var(--green);font-weight:700">80–83%</td><td style="color:var(--muted);font-size:12px">При адресуванні кар'єри, OKR-якості і тімбілдингу — повернення до рівня лідера реалістичне за один цикл.</td></tr>
         <tr><td>Детрактори</td><td style="color:var(--red);font-weight:700">2–4 особи</td><td style="color:var(--green);font-weight:700">0 або 1</td><td style="color:var(--muted);font-size:12px">Якщо 3 нейтральних перейдуть у детрактори — eNPS впаде до ~65%.</td></tr>
         <tr><td>Прагнення до розвитку</td><td style="color:var(--red);font-weight:700">&lt; 82%</td><td style="color:var(--green);font-weight:700">87–89%</td><td style="color:var(--muted);font-size:12px">Career Ladder + conversation у 1:1 до кінця Q2 — достатньо.</td></tr>
-        <tr><td>Внутрішні спільноти</td><td style="color:var(--amber);font-weight:700">~72%</td><td style="color:var(--green);font-weight:700">78–80%</td><td style="color:var(--muted);font-size:12px">Один якісний team event + квартальний cadence — прогнозовано +5–7пп за цикл.</td></tr>
+        <tr><td>Внутрішні спільноти</td><td style="color:var(--amber);font-weight:700">~72%</td><td style="color:var(--green);font-weight:700">78–80%</td><td style="color:var(--muted);font-size:12px">Один якісний team event + квартальний ритм — прогнозовано +5–7пп за цикл.</td></tr>
         <tr><td>Participation</td><td style="color:var(--amber);font-weight:700">~87–88%</td><td style="color:var(--green);font-weight:700">92–95%</td><td style="color:var(--muted);font-size:12px">Без реакції participation починає падати.</td></tr>
       </tbody>
     </table>
@@ -449,7 +471,7 @@
     <div class="verdict-box">
       Back Office eNPS 78.26% — <strong>не криза, але тривожний тренд</strong>. Команда впала зі своєї лідерської позиції (~90%) за два цикли. При цьому зберігає унікальне: 0 детракторів, 92% participation, і найсильніший блок Партнерства (91.51%) серед усіх юнітів. Люди залучені і готові говорити. Це рідкісне вікно.
       <br><br>
-      <strong>Три root causes:</strong> (1) OKR як формальність — сервісна функція не бачить свого стратегічного внеску; (2) Кар'єрна невизначеність — IC-треки Back Office не сформовані; (3) Брак спільноти і cross-team visibility — 52.2% хочуть тімбілдингів.
+      <strong>Три root causes:</strong> (1) OKR як формальність — сервісна функція не бачить свого стратегічного внеску; (2) Кар'єрна невизначеність — IC-треки Back Office не сформовані; (3) Брак спільноти і міжкомандну видимість — 52.2% хочуть тімбілдингів.
       <br><br>
       <strong>Що реально вирішить ситуацію до H2 2026:</strong> (1) Career conversations у кожному 1:1 до кінця Q2 + Career Ladder до кінця H1; (2) Back Office OKR workshop перед наступним циклом; (3) Один офлайн cross-functional team event до кінця H1 2026. Три дії — жодна не потребує великого бюджету. Вікно можливостей відкрите. Але воно не вічне.
     </div>
@@ -457,7 +479,7 @@
 </div>
 </div>
 <div style="text-align:center;color:var(--muted);font-size:12px;padding:12px 0 32px;border-top:1px solid var(--border);background:var(--dark)">
-  eNPS & Engagement Звіт · Back Office · H1 2026 · Конфіденційно · 28 травня 2026
+  eNPS & Engagement Звіт · Back Office · H1 2026 · Конфіденційно · 28 травня 2026 · Питання: HR Lead, Quarks
 </div>
 <script>
 function showTab(id) {
