@@ -88,14 +88,14 @@
   .block-body.open{display:block;}
 
   /* REVIEW/PROBLEM BOXES */
-  .review-box{background:var(--blue-light);border-left:3px solid var(--blue);padding:12px 16px;border-radius:0 10px 10px 0;margin:14px 0 8px;font-size:13px;line-height:1.6;}
-  .problem-box{background:var(--red-light);border-left:3px solid var(--red);padding:12px 16px;border-radius:0 10px 10px 0;margin-bottom:14px;font-size:13px;line-height:1.6;}
+  .review-box{background:#f5f3f0;border-left:3px solid var(--border);padding:12px 16px;border-radius:0 10px 10px 0;margin:14px 0 8px;font-size:13px;line-height:1.6;color:var(--dark);}
+  .problem-box{background:#f5f3f0;border-left:3px solid #c8c0b8;padding:12px 16px;border-radius:0 10px 10px 0;margin-bottom:14px;font-size:13px;line-height:1.6;color:var(--dark);}
 
   /* ACTION ITEMS */
   .ai-title{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--sage);font-weight:700;margin-bottom:8px;}
-  .ai-item{background:var(--sage-light);border:1px solid rgba(106,158,122,0.2);border-radius:12px;padding:12px 16px;margin-bottom:8px;font-size:13px;}
-  .ai-tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:3px 10px;border-radius:20px;margin-bottom:6px;background:rgba(106,158,122,0.15);color:var(--sage);}
-  .ai-tag.strat{background:rgba(58,158,111,0.12);color:var(--green);}
+  .ai-item{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:12px 16px;margin-bottom:8px;font-size:13px;}
+  .ai-tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:3px 10px;border-radius:20px;margin-bottom:6px;background:#ede9e4;color:var(--gray);}
+  .ai-tag.strat{background:#ede9e4;color:var(--gray);}
 
   /* HISTORY */
   .history-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
@@ -276,7 +276,7 @@
         <div class="metric-block">
           <div class="metric-block-label">Affemity · РИЗИК</div>
           <div class="metric-block-val" style="color:var(--red)">60.87%</div>
-          <div class="metric-block-note">88% → 60.87% за один цикл. −27.13% — найзначніше зниження в компанії. 13% детракторів (3 людини). Попередні гіпотези причин — у вкладці <strong>Гіпотези</strong> (гіпотеза 6).</div>
+          <div class="metric-block-note">88% → 60.87% за один цикл. −27.13% — найзначніше зниження в компанії. 13% детракторів (3 людини). Попередні гіпотези причин — у вкладці <strong>Гіпотези</strong>.</div>
         </div>
         <div class="metric-block">
           <div class="metric-block-label">Moderation · РИЗИК</div>
@@ -294,15 +294,7 @@
       <div class="info-label">Розрив між юнітами зростає</div>
       <div class="risk-text"><em style="font-size:11px;color:var(--gray)">Управлінська варіативність — різниця в результатах між юнітами, що працюють в однакових умовах. Якщо зовнішній контекст однаковий, а eNPS різний — значить справа у внутрішніх факторах: стиль управління, процеси, культура команди.</em><br><br>Розрив між найкращим і найгіршим юнітом зріс: H2 2025 <strong style="color:var(--amber)">~24%</strong> → H1 2026 <strong style="color:var(--red)">28%</strong>. Soportio +10.76% і Affemity −27.13% в одному році — найяскравіший приклад: однакові зовнішні умови, протилежна динаміка.</div>
     </div>
-    <div class="green-banner">
-      <div class="info-label" style="color:var(--sage)">Стабілізуючі фактори Quarks</div>
-      <div class="risk-text">
-        <strong>Задоволення (90.67%) і Партнерство (91.51%)</strong> — найміцніша основа. Люди задоволені своєю роботою і взаємодіють з колегами добре.<br>
-        <strong>Back Office: 0 детракторів</strong> — унікальна позиція в компанії, вище середнього Quarks (78.26% vs 75.62%).<br>
-        <strong>Взаємодія з менеджером: 89.97%</strong> — команди загалом довіряють своїм керівникам.<br>
-        <strong>Три юніти у нормі або вище</strong> — Soportio, Social Discovery, Back Office — показують, що утримання залученості можливе.
-      </div>
-    </div>
+
     <div style="background:rgba(196,43,71,0.05);border:1.5px solid rgba(196,43,71,0.2);border-radius:14px;padding:16px 20px;margin-top:14px">
       <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--red);font-weight:700;margin-bottom:8px">eNPS як випереджаючий індикатор плинності</div>
       <div style="font-size:13px;line-height:1.7;color:var(--dark)">
@@ -348,123 +340,108 @@
   </div>
 
   <div class="section">
-    <div class="section-label">Пріоритети реагування · Quarks All</div>
-
-    <div class="block-card">
-      <div class="block-header" onclick="toggle(this)" style="border-left:4px solid var(--red)">
-        <div class="block-name" style="color:var(--red)">ДІЯТИ — Q2 2026</div>
-        <div class="block-score" style="color:var(--red)">2 юніти</div>
-        <div class="block-trend"></div>
-        <div><span class="chevron">▾</span></div>
-      </div>
-      <div class="block-body">
-        <table>
-          <thead><tr><th>Напрям</th><th>Проблема</th><th>Рекомендовані дії</th></tr></thead>
-          <tbody>
-            <tr><td style="font-weight:700;color:var(--red)">Affemity</td><td style="font-size:12px;color:var(--gray)">−27.13%. 13% детракторів (3 людини). Причини невідомі. Ризик подальшого падіння без втручання.</td><td style="font-size:12px">Лідерська зустріч HR + Affemity Lead: аналіз даних і вибір пріоритетних кроків. Фокус — робота з нейтральними. Окремий план дій для менеджера. Дедлайн: кінець Q2.</td></tr>
-            <tr><td style="font-weight:700;color:var(--red)">Moderation</td><td style="font-size:12px;color:var(--gray)">−15.94% + participation падає. Люди перестають говорити — класичний сигнал перед різким відтоком.</td><td style="font-size:12px">Групова сесія зворотного зв'язку або пульс-опитування сесія зворотного зв'язку до H2 2026 опитування. Виявити першопричину.</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <div class="block-card">
-      <div class="block-header" onclick="toggle(this)" style="border-left:4px solid var(--amber)">
-        <div class="block-name" style="color:var(--amber)">СИСТЕМНО — Q2–Q3 2026</div>
-        <div class="block-score" style="color:var(--amber)">2 теми</div>
-        <div class="block-trend"></div>
-        <div><span class="chevron">▾</span></div>
-      </div>
-      <div class="block-body">
-        <table>
-          <thead><tr><th>Тема</th><th>Чому важливо</th><th>Рекомендовані дії</th></tr></thead>
-          <tbody>
-            <tr><td style="font-weight:700">OKR як формальність</td><td style="font-size:12px;color:var(--gray)">Сигнал із кількох юнітів одночасно. IC-функції і сервісні команди не бачать зв'язку між своєю роботою і OKR.</td><td style="font-size:12px">OKR-воркшоп на рівні компанії з фокусом на визначення внеску кожної функції. Структурована участь у формулюванні OKR, не тільки в їх отриманні.</td></tr>
-            <tr><td style="font-weight:700">Спільноти і командна культура</td><td style="font-size:12px;color:var(--gray)">73.60% — найнижчий блок. В умовах war context + remote-first без свідомого інвестування internal community розмивається.</td><td style="font-size:12px">Один якісний team event у кожному юніті до кінця H1. Квартальний ритм починаючи Q3.</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <div class="block-card">
-      <div class="block-header" onclick="toggle(this)" style="border-left:4px solid var(--blue)">
-        <div class="block-name" style="color:var(--blue)">СЕРЕДНІЙ — 4–8 тижнів</div>
-        <div class="block-score" style="color:var(--blue)">2 теми</div>
-        <div class="block-trend"></div>
-        <div><span class="chevron">▾</span></div>
-      </div>
-      <div class="block-body">
-        <table>
-          <thead><tr><th>Тема</th><th>Контекст</th><th>Рекомендовані дії</th></tr></thead>
-          <tbody>
-            <tr><td style="font-weight:700">Кар'єрна ясність для IC</td><td style="font-size:12px;color:var(--gray)">Розвиток −4.31% — найбільше падіння блоку. IC-треки в Back Office, Internal PaaS та інших функціях не структуровані.</td><td style="font-size:12px">Карʼєрні треки для всіх IC-функцій. Career conversation у кожному 1:1.</td></tr>
-            <tr><td style="font-weight:700">Ресурсне навантаження</td><td style="font-size:12px;color:var(--gray)">77.62% — другий найнижчий блок. Промоутери відчувають межу ресурсу навіть при збереженні лояльності.</td><td style="font-size:12px">Аудит завантаженості. «Захищений час» для проактивної роботи.</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <div class="block-card">
-      <div class="block-header" onclick="toggle(this)" style="border-left:4px solid var(--green)">
-        <div class="block-name" style="color:var(--green)">СИЛЬНІ СТОРОНИ — зберігати і масштабувати</div>
-        <div class="block-score" style="color:var(--green)">3 зони</div>
-        <div class="block-trend"></div>
-        <div><span class="chevron">▾</span></div>
-      </div>
-      <div class="block-body">
-        <table>
-          <thead><tr><th>Зона</th><th>Чому важливо зберегти</th></tr></thead>
-          <tbody>
-            <tr><td style="font-weight:700;color:var(--green)">Soportio · зростання у складний рік</td><td style="font-size:12px;color:var(--gray)">+10.76% у той самий рік, коли інші юніти падали. Попередні гіпотези успіху на основі даних: (1) <strong>менеджерська стабільність</strong> — жодних змін у команді менеджменту між циклами; (2) <strong>зрілість процесів</strong> — Задоволення і Партнерство вище середнього компанії; (3) <strong>ясність ролей</strong> — менший рівень кар'єрної невизначеності порівняно з іншими юнітами. Варто підтвердити через коротке інтерв'ю з лідом Soportio.</td></tr>
-            <tr><td style="font-weight:700;color:var(--green)">Задоволення (90.67%) + Партнерство (91.51%)</td><td style="font-size:12px;color:var(--gray)">Людям подобається їхня робота і колеги. Це фундамент, який утримує компанію від кризи. Не зруйнувати реорганізацією або надмірним операційним тиском.</td></tr>
-            <tr><td style="font-weight:700;color:var(--green)">Back Office: 0 детракторів</td><td style="font-size:12px;color:var(--gray)">Унікальна позиція в компанії. Довіра і залученість, на яких можна будувати далі — при своєчасних точкових втручаннях.</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
+    <div class="section-label">Пріоритети реагування</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Пріоритет</th>
+          <th>Напрям</th>
+          <th>Сигнал</th>
+          <th>Дія</th>
+          <th>Горизонт</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="">
+          <td style="text-align:center;font-size:16px">🔴</td>
+          <td><strong>Affemity</strong></td>
+          <td style="font-size:12px;color:var(--gray)">−27.13% за цикл. 13% детракторів (3 людини).</td>
+          <td style="font-size:12px">Зустріч HR з CEO Affemity: аналіз даних, план дій для нейтралів</td>
+          <td><span class="tag tag-red">Q2</span></td>
+        </tr>
+        <tr class="">
+          <td style="text-align:center;font-size:16px">🔴</td>
+          <td><strong>Moderation</strong></td>
+          <td style="font-size:12px;color:var(--gray)">−15.94%. Participation знижується.</td>
+          <td style="font-size:12px">Розмова з Head of Trust &amp; Safety: системні патерни, причини падіння</td>
+          <td><span class="tag tag-red">Q2</span></td>
+        </tr>
+        <tr>
+          <td style="text-align:center;font-size:16px">🟡</td>
+          <td><strong>Internal PaaS</strong></td>
+          <td style="font-size:12px;color:var(--gray)">62.16%. Рівень випробувального терміну вище норми.</td>
+          <td style="font-size:12px">Аналіз онбордингу та першого року утримання</td>
+          <td><span class="tag tag-amber">Q2–Q3</span></td>
+        </tr>
+        <tr>
+          <td style="text-align:center;font-size:16px">🟡</td>
+          <td><strong>«OKR як формальність»</strong></td>
+          <td style="font-size:12px;color:var(--gray)">Сигнал із кількох юнітів одночасно.</td>
+          <td style="font-size:12px">Системна робота через OKR Champions у кожній функції: регулярні нагадування, підтримка, зв'язок між задачами і цілями компанії</td>
+          <td><span class="tag tag-amber">Q3</span></td>
+        </tr>
+        <tr>
+          <td style="text-align:center;font-size:16px">🟡</td>
+          <td><strong>Кар'єрні треки для IC</strong></td>
+          <td style="font-size:12px;color:var(--gray)">Розвиток −4.31% — найбільше падіння блоку.</td>
+          <td style="font-size:12px">IC-треки для всіх функцій + кар'єрна розмова у 1:1</td>
+          <td><span class="tag tag-amber">Q3</span></td>
+        </tr>
+        <tr>
+          <td style="text-align:center;font-size:16px">🟡</td>
+          <td><strong>Спільноти та командний зв'язок</strong></td>
+          <td style="font-size:12px;color:var(--gray)">73.60% — найнижчий блок. War context + remote.</td>
+          <td style="font-size:12px">Team events у кожному юніті, квартальний ритм з Q3</td>
+          <td><span class="tag tag-amber">Q3</span></td>
+        </tr>
+        <tr>
+          <td style="text-align:center;font-size:16px">🟡</td>
+          <td><strong>Core Remote Abroad</strong></td>
+          <td style="font-size:12px;color:var(--gray)">69.23%, −4.10%. Третій цикл падіння.</td>
+          <td style="font-size:12px">Диференційована підтримка: окремий підхід для сегменту за кордоном</td>
+          <td><span class="tag tag-amber">H2</span></td>
+        </tr>
+        <tr>
+          <td style="text-align:center;font-size:16px">🟢</td>
+          <td><strong>Soportio</strong></td>
+          <td style="font-size:12px;color:var(--gray)">+10.76%. Єдине зростання в компанії.</td>
+          <td style="font-size:12px">Підтвердити гіпотези успіху через коротке інтерв'ю з лідом</td>
+          <td><span class="tag tag-gray">Моніторинг</span></td>
+        </tr>
+        <tr>
+          <td style="text-align:center;font-size:16px">🟢</td>
+          <td><strong>Задоволення + Партнерство</strong></td>
+          <td style="font-size:12px;color:var(--gray)">90.67% + 91.51%. Найміцніша основа.</td>
+          <td style="font-size:12px">Зберегти: не перевантажувати реорганізацією або надмірним операційним тиском</td>
+          <td><span class="tag tag-gray">Моніторинг</span></td>
+        </tr>
+        <tr>
+          <td style="text-align:center;font-size:16px">🟢</td>
+          <td><strong>Взаємодія з менеджером</strong></td>
+          <td style="font-size:12px;color:var(--gray)">89.97%. Команди загалом довіряють керівникам.</td>
+          <td style="font-size:12px">Підтримувати якість 1:1 і зворотного зв'язку — це базис утримання</td>
+          <td><span class="tag tag-gray">Моніторинг</span></td>
+        </tr>
+        <tr>
+          <td style="text-align:center;font-size:16px">🟢</td>
+          <td><strong>Back Office: 0 детракторів</strong></td>
+          <td style="font-size:12px;color:var(--gray)">Унікальна позиція в компанії. 92% participation.</td>
+          <td style="font-size:12px">Точкові втручання по нейтралах (Leave balance, Referral) — швидкі виграші</td>
+          <td><span class="tag tag-gray">Моніторинг</span></td>
+        </tr>
+        <tr>
+          <td style="text-align:center;font-size:16px">🟢</td>
+          <td><strong>3 юніти стабільні або зростають</strong></td>
+          <td style="font-size:12px;color:var(--gray)">Soportio +10.76%, Social Discovery −1.46%, Back Office вище Quarks All.</td>
+          <td style="font-size:12px">Залученість можлива навіть в поточних умовах — вивчити і масштабувати практики</td>
+          <td><span class="tag tag-gray">Моніторинг</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
   </div>
 
-  <div class="section">
-    <div class="section-label">Три дії, яких не можна відкладати</div>
-    <div class="critical-card">
-      <div class="critical-num">01</div>
-      <div class="critical-title">Affemity: зустріч і план дій до кінця Q2</div>
-      <div class="critical-text">88% → 60.87% за один цикл. 13% детракторів (3 людини), значна частка нейтральних. Кількісний опитувальник не розкриває причини — потрібна пряма розмова. Запланована зустріч HR з CEO Affemity для аналізу даних і визначення пріоритетних кроків.</div>
-      <div class="critical-action">
-        <ul style="margin:8px 0 0 0;padding-left:18px;line-height:1.8">
-          <li>Мета зустрічі: зрозуміти контекст і сформувати дії для для нейтралів</li>
-          <li>Owner: <strong>HR</strong>. Результат: узгоджений план дій до кінця Q2</li>
-        </ul>
-      </div>
-    </div>
-    <div class="critical-card">
-      <div class="critical-num">02</div>
-      <div class="critical-title">Moderation: розібратись у причинах падіння</div>
-      <div class="critical-text">−15.94% eNPS. Зниження participation — не критичний сигнал сам по собі, але вимагає розуміння контексту. Причина падіння поки не очевидна з кількісних даних.</div>
-      <div class="critical-action">
-        <ul style="margin:8px 0 0 0;padding-left:18px;line-height:1.8">
-          <li>Розмова з Head of Trust &amp; Safety: визначити системні патерни</li>
-          <li>Пульс-опитування до наступного циклу, якщо розмова не дасть достатньо контексту</li>
-          <li>Owner: <strong>HR + Head of Trust &amp; Safety</strong></li>
-        </ul>
-      </div>
-    </div>
-    <div class="critical-card">
-      <div class="critical-num">03</div>
-      <div class="critical-title">«OKR як формальність» — сигнал з кількох юнітів одночасно</div>
-      <div class="critical-text">Сервісні функції не бачать зв'язку між своїми задачами і цілями компанії — це системна проблема залученості, а не питання розуміння OKR-методології.</div>
-      <div class="critical-action">
-        <ul style="margin:8px 0 0 0;padding-left:18px;line-height:1.8">
-          <li>OKR-воркшоп перед наступним циклом планування: як задачі кожної функції рухають спільні цілі</li>
-          <li>Сервісні функції — учасники формулювання OKR, а не лише їх отримувачі</li>
-          <li>Owner: <strong>Ops-менеджер</strong>. Метрика H2 2026: зниження сигналу у наступному циклі опитування</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-</div>
 </div>
 
 <!-- TAB 3: ЮНІТИ -->
@@ -551,13 +528,13 @@
           <td><span class="tag tag-red">Ризик</span></td>
           <td style="color:var(--gray);font-size:12px">Продовжує падіння. Квітнева реструктуризація. Рівень випробувального терміну вище норми.</td>
         </tr>
-        <tr class="highlight-row">
+        <tr class="">
           <td><strong>Affemity</strong></td>
           <td style="color:var(--gray)">88.00%</td>
           <td><strong style="color:var(--red)">60.87%</strong></td>
           <td style="color:var(--red);font-weight:700">−27.13%</td>
           <td><span class="tag tag-red">Ризик</span></td>
-          <td style="color:var(--gray);font-size:12px">Найбільша просадка в компанії за один цикл. 13% детракторів (3 людини). Гіпотези причин — у вкладці <em>Гіпотези</em> (гіпотеза 6).</td>
+          <td style="color:var(--gray);font-size:12px">Найбільша просадка в компанії за один цикл. 13% детракторів (3 людини). Гіпотези причин — у вкладці <em>Гіпотези</em>.</td>
         </tr>
         <tr>
           <td style="color:var(--gray)"><strong>Quarks All</strong></td>
@@ -617,7 +594,7 @@
       </tbody>
     </table>
     <div style="margin-top:10px;padding:12px 16px;background:rgba(46,107,181,0.05);border-radius:12px;font-size:13px;color:var(--gray)">
-      <strong style="color:var(--dark)">Закономірність:</strong> найсильніші блоки — Задоволення і Партнерство — утримують компанію від кризи. Найслабші — Спільноти і Ресурсний стан — сигналізують про системне втомлення і дефіцит організаційного зв'язку. Розвиток показує найбільше падіння — кар'єрна невизначеність поширена в IC-функціях по всій компанії.
+      <strong style="color:var(--dark)">Закономірність:</strong> найсильніші блоки — Задоволення і Партнерство — формують міцну основу залученості. Найслабші — Спільноти і Ресурсний стан — сигналізують про дефіцит організаційного зв'язку і накопичене навантаження. Розвиток показує найбільше падіння — питання кар'єрної ясності для IC (Individual Contributor) актуальне по всій компанії.
     </div>
   </div>
 
@@ -632,11 +609,11 @@
         <div class="block-priority" style="color:var(--amber)">ВИСОКИЙ <span class="chevron">▾</span></div>
       </div>
       <div class="block-body">
-        <div class="review-box" style="margin-top:0"><strong>Найбільше падіння серед усіх блоків company-wide.</strong> −4.31% — системний сигнал. Особливо болюче для IC-функцій (Back Office, Internal PaaS, Affemity), де кар'єрні треки менш структуровані, ніж у продуктових командах.</div>
-        <div class="problem-box"><strong>Ризик:</strong> В умовах хорошого загального eNPS люди ще не йдуть, але починають дивитись на зовнішній ринок. Career clarity — профілактика, а не реакція на звільнення.</div>
-        <div class="ai-title">Рекомендовані дії</div>
-        <div class="ai-item"><div class="ai-tag">Тактична · Q2 2026</div><br>Конкретна розмова про кар'єру у 1:1 для всіх IC-ролей. Не «де ти бачиш себе», а «що тобі потрібно і що компанія може запропонувати».</div>
-        <div class="ai-item"><div class="ai-tag strat">Стратегічна · H1 2026</div><br>Карʼєрні треки для всіх IC-функцій з чіткими критеріями рівнів. Публікація внутрішня. IC-трек відокремити від менеджерського.</div>
+        <div class="review-box" style="margin-top:0"><strong>Найбільше падіння серед усіх блоків по компанії.</strong> −4.31% — сигнал, що надходить з кількох юнітів одночасно. Питання кар'єрного зростання актуальне для IC-ролей в цілому, незалежно від функції.</div>
+        <div class="problem-box"><strong>На що звертати увагу:</strong> Ясність кар'єрного шляху — це профілактика. Поки загальний eNPS тримається, гострого сигналу немає. Але якщо питання залишається без відповіді цикл за циклом — це впливає на рішення людей.</div>
+        <div class="ai-title">В роботі</div>
+        <div class="ai-item"><div class="ai-tag">Поточний OKR</div><br>Матриці компетенцій для технічних ролей і менеджерів — в процесі розробки. Важливо завершити і опублікувати: це і є відповідь на запит щодо кар'єрної ясності.</div>
+        <div class="ai-item"><div class="ai-tag strat">Менеджерська практика</div><br>Кар'єрна розмова — частина роботи менеджера в рамках регулярних 1:1, а не окрема компанійська ініціатива. Reinforcement через навчальний трек для менеджерів.</div>
       </div>
     </div>
 
@@ -648,10 +625,10 @@
         <div class="block-priority" style="color:var(--amber)">РОЗВИТОК <span class="chevron">▾</span></div>
       </div>
       <div class="block-body">
-        <div class="review-box" style="margin-top:0"><strong>Блок з потенціалом зростання.</strong> В умовах remote-first культури — онлайн-події, асинхронні ініціативи та цифрові спільноти за інтересами можуть суттєво підвищити залученість. Особливо актуально для remote-працівників за межами України.</div>
-        <div class="ai-title">Рекомендовані дії</div>
-        <div class="ai-item"><div class="ai-tag">Тактична · H1 2026</div><br>Один міжфункціональний командний захід у кожному юніті до кінця H1. Паралельно: запустити 1-2 онлайн-формати для залучення remote-працівників (клуби за інтересами, асинхронні ініціативи).</div>
-        <div class="ai-item"><div class="ai-tag strat">Стратегічна · Q3 2026</div><br>Квартальний ритм заходів зафіксувати як постійну практику. Програма взаємного визнання між функціями. Розвиток онлайн-спільнот для remote-сегменту: формати, що не потребують фізичної присутності.</div>
+        <div class="review-box" style="margin-top:0">73.60% — найнижчий блок по компанії. Відображає реальність: третій рік повномасштабної війни, remote-first формат, географічно розподілена команда. Органічний командний зв'язок не виникає сам по собі — він потребує свідомої підтримки.</div>
+        <div class="review-box" style="background:rgba(58,158,111,0.06);border-left-color:var(--sage)"><strong>Позитивна динаміка:</strong> З виходом event-менеджера активно запрацювала функція командоутворення. Тімбілдинги в різних форматах — офлайн і онлайн — вже дають позитивний відгук від команд. Функція була просіла — зараз повертається. Очікуємо відображення у H2 2026.</div>
+        <div class="ai-title">В процесі</div>
+        <div class="ai-item"><div class="ai-tag">Ongoing</div><br>Квартальний ритм заходів — офлайн і онлайн формати для всіх сегментів. Особлива увага: remote-працівники за межами України.</div>
       </div>
     </div>
 
@@ -663,10 +640,10 @@
         <div class="block-priority" style="color:var(--amber)">ВИСОКИЙ <span class="chevron">▾</span></div>
       </div>
       <div class="block-body">
-        <div class="review-box" style="margin-top:0"><strong>Другий найнижчий блок.</strong> В умовах активного OKR-впровадження, трансформаційних змін і воєнного контексту ресурсне навантаження на команди зростає.</div>
-        <div class="ai-title">Рекомендовані дії</div>
-        <div class="ai-item"><div class="ai-tag">Тактична · 2 тижні</div><br>Check-in у 1:1 про реальне навантаження — як окреме питання. Аудит: що можна автоматизувати або зняти з пріоритету.</div>
-        <div class="ai-item"><div class="ai-tag strat">Стратегічна · 1 місяць</div><br>«Захищений час» для проактивної роботи. Операційне навантаження не має повністю витісняти стратегічну діяльність.</div>
+        <div class="review-box" style="margin-top:0">Другий найнижчий блок. В умовах активного OKR-впровадження, трансформаційних змін і воєнного контексту ресурсне навантаження на команди зростає.</div>
+        <div class="ai-title">Що допомагає</div>
+        <div class="ai-item"><div class="ai-tag">Відпустки</div><br>Вчасне використання відпустки — не формальність, а сигнал про стан людини. Менеджери відстежують, HR підтримує — разом.</div>
+        <div class="ai-item"><div class="ai-tag">Якісні 1:1</div><br>Регулярний check-in від менеджера про навантаження і пріоритети. Не HR-відповідальність — менеджерська практика, яку HR підтримує через навчальний трек.</div>
       </div>
     </div>
 
@@ -678,9 +655,9 @@
         <div class="block-priority" style="color:var(--amber)">ВИСОКИЙ <span class="chevron">▾</span></div>
       </div>
       <div class="block-body">
-        <div class="review-box" style="margin-top:0">Третє за величиною падіння. Особливо актуально для сервісних функцій (Back Office) і команд без прямого продуктового виходу — де внесок менш видний у метриках.</div>
+        <div class="review-box" style="margin-top:0">Третє за величиною падіння. Особливо актуально для сервісних юнітів — де результат роботи опосередкований і потребує більше свідомого підсилення з боку керівництва.</div>
         <div class="ai-title">Рекомендовані дії</div>
-        <div class="ai-item"><div class="ai-tag">Тактична</div><br>Зробити contribution невидимих функцій видимим на рівні компанії: «X enabled Y цього кварталу».</div>
+        <div class="ai-item"><div class="ai-tag">Практика</div><br>Регулярне визнання результатів сервісних юнітів на рівні компанії — через all-hands, внутрішні канали, зворотний зв'язок від бізнес-юнітів.</div>
       </div>
     </div>
 
@@ -692,7 +669,7 @@
         <div class="block-priority" style="color:var(--gray)">МОНІТОРИНГ <span class="chevron">▾</span></div>
       </div>
       <div class="block-body">
-        <div class="review-box" style="margin-top:0"><strong>Найсильніший блок компанії.</strong> Людина довіряє колегам і відчуває командну підтримку — навіть в турбулентний рік. Це фундамент, який не можна зруйнувати реорганізацією. Зберігати як актив.</div>
+        <div class="review-box" style="margin-top:0"><strong>Найсильніший блок компанії.</strong> Люди довіряють колегам і відчувають командну підтримку — навіть в турбулентний рік. Це фундамент, який не можна зруйнувати реорганізацією. Зберігати як актив.</div>
       </div>
     </div>
 
@@ -704,7 +681,7 @@
         <div class="block-priority" style="color:var(--gray)">МОНІТОРИНГ <span class="chevron">▾</span></div>
       </div>
       <div class="block-body">
-        <div class="review-box" style="margin-top:0"><strong>Найменше падіння, найміцніша основа.</strong> Люди задоволені своєю роботою незалежно від стану інших блоків. Саме тому компанія з хорошою основою: не вміст роботи є проблемою, а системні фактори навколо неї.</div>
+        <div class="review-box" style="margin-top:0"><strong>Найменше падіння, найміцніша основа.</strong> Люди задоволені своєю роботою незалежно від стану інших блоків. Проблема не в тому, чим займаються люди, а в контексті навколо: кар'єра, спільноти, ресурс.</div>
       </div>
     </div>
 
@@ -726,7 +703,7 @@
         <span class="chevron">▾</span>
       </div>
       <div class="hypo-body">
-        <div class="hypo-context">Сигнал про OKR як формальність надходить незалежно з кількох юнітів одночасно. Коли команди — особливо сервісні функції — не бачать зв'язку між своєю роботою і OKR компанії, це посилює відчуження і знижує залученість. Проблема не в самих OKR, а в якості визначення внеску кожної функції.</div>
+        <div class="hypo-context">Сигнал про OKR як формальність надходить незалежно з кількох юнітів одночасно. Коли команди — особливо сервісні юніти — не бачать зв'язку між своєю роботою і OKR компанії, це посилює відчуження і знижує залученість. Проблема не в самих OKR, а в якості визначення внеску кожного юніту.</div>
         <div class="hypo-actions">
           <div class="hypo-actions-title">Рекомендовані дії</div>
           <div class="hypo-action-item"><span class="hypo-arrow">→</span><span>OKR-воркшоп на рівні компанії перед наступним циклом планування. Фокус: як задачі кожної функції рухають спільні цілі компанії.</span></div>
@@ -740,10 +717,10 @@
         <span class="chevron">▾</span>
       </div>
       <div class="hypo-body">
-        <div class="hypo-context">Розвиток −4.31% — найбільше падіння серед усіх блоків company-wide. IC-треки в HR, Finance, Operations, Legal, Communications — традиційно менш структуровані, ніж у продуктових або інженерних командах. Це системна прогалина, а не ізольована Back Office-проблема.</div>
+        <div class="hypo-context">Розвиток −4.31% — найбільше падіння серед усіх блоків по компанії. Питання кар'єрної ясності для IC-ролей актуальне по всій компанії — незалежно від функції чи юніту.</div>
         <div class="hypo-actions">
           <div class="hypo-actions-title">Рекомендовані дії</div>
-          <div class="hypo-action-item"><span class="hypo-arrow">→</span><span>Карʼєрні треки для всіх IC-функцій. Два треки: IC-depth (експертиза без менеджменту) і management.</span></div>
+          <div class="hypo-action-item"><span class="hypo-arrow">→</span><span>Карʼєрні треки для всіх IC (Individual Contributor). Два треки: IC-depth (експертиза без менеджменту) і management.</span></div>
           <div class="hypo-action-item"><span class="hypo-arrow">→</span><span>Кар'єрні розмови у 1:1 до кінця Q2 — як системна практика, а не разовий захід.</span></div>
         </div>
       </div>
@@ -755,7 +732,7 @@
         <span class="chevron">▾</span>
       </div>
       <div class="hypo-body">
-        <div class="hypo-context">73.60% Спільноти — найнижчий блок по компанії. Третій рік повномасштабної війни + remote-first культура = люди фізично розділені і організаційно ізольовані. Без свідомого інвестування в internal community цей показник продовжить падати.</div>
+        <div class="hypo-context">73.60% Спільноти — найнижчий блок по компанії. Третій рік повномасштабної війни + remote-first культура = люди фізично розділені і організаційно ізольовані. Без свідомого інвестування у командний зв'язок цей показник продовжить падати. З виходом event-менеджера функція командоутворення вже активно запрацювала — перші позитивні відгуки є.</div>
         <div class="hypo-actions">
           <div class="hypo-actions-title">Рекомендовані дії</div>
           <div class="hypo-action-item"><span class="hypo-arrow">→</span><span>Один міжфункціональний командний захід у кожному юніті до кінця H1 2026.</span></div>
@@ -795,29 +772,28 @@
       </div>
     </div>
 
-    <div class="hypo-card" style="border-color:rgba(255,70,105,0.3)">
-      <div class="hypo-header" onclick="toggleHypo(this)" style="background:rgba(255,70,105,0.04)">
-        <div class="hypo-title-wrap"><span class="hypo-letter" style="background:rgba(255,70,105,0.15);color:var(--red)">6</span><span class="hypo-name">Affemity −27.13%: попередні гіпотези на основі даних</span></div>
+    <div class="hypo-card">
+      <div class="hypo-header" onclick="toggleHypo(this)">
+        <div class="hypo-title-wrap"><span class="hypo-letter">6</span><span class="hypo-name">Affemity −27.13%: попередні гіпотези на основі даних</span></div>
         <span class="chevron">▾</span>
       </div>
       <div class="hypo-body">
-        <div style="background:rgba(255,70,105,0.05);border-left:3px solid var(--red);padding:12px 16px;border-radius:0 10px 10px 0;margin-bottom:14px;font-size:13px;line-height:1.6">
-          <strong>Це попередні гіпотези на основі кількісних даних.</strong> Якісне дослідження (лідерська зустріч + фокус-група) підтвердить або спростує кожну.
+        <div style="background:#f5f3f0;border-left:3px solid #c8c0b8;padding:12px 16px;border-radius:0 10px 10px 0;margin-bottom:14px;font-size:13px;line-height:1.6">
+          Гіпотези ґрунтуються на кількісних даних звіту. Підтвердження — через зустріч HR з CEO Affemity.
         </div>
         <div class="hypo-context">
-          <strong>Факти:</strong> 88% H2 2025 → 60.87% H1 2026. −27.13% за один цикл. 13% детракторів (3 людини). Зовнішні умови для Affemity ті ж самі, що для інших юнітів — причина внутрішня.<br><br>
-          <strong>Гіпотеза А: управлінська динаміка.</strong> Просадка такої амплітуди за один цикл найсильніше корелює зі змінами в безпосередньому керівництві — новий менеджер, зміна стилю управління або якості 1:1. eNPS вимірює відчуття, а не процеси — і ці відчуття формує насамперед менеджер.<br><br>
-          <strong>Гіпотеза Б: відчуття «нас не чують».</strong> Якщо рішення про продуктовий напрям або ресурси ухвалювались без залучення команди — детракторський сигнал закономірний. 13% активно незадоволених — це не дрейф, це конкретна больова точка.<br><br>
-          <strong>Гіпотеза В: кар'єрна невизначеність + ринковий контекст.</strong> На тлі загального падіння Розвитку (−4.31%) для продуктового юніту з ринковим попитом на фахівців відсутність чіткого кар'єрного шляху збільшує ризик відходу. Нейтральні — ті, хто ще не вирішив.
+          <strong>Факти зі звіту:</strong> 88% H2 2025 → 60.87% H1 2026. −27.13% за один цикл. 13% детракторів (3 людини) — всі з одного сегменту команди. Решта — значна частка нейтральних. Зовнішні умови для Affemity ті самі, що й для інших юнітів — причина внутрішня.<br><br>
+          <strong>Гіпотеза А: концентрація незадоволення в одному сегменті.</strong> Всі троє детракторів — з одного підрозділу команди. Це не розподілене незадоволення, а локальна точка болю. Якщо нейтральні з того самого сегменту — картина стає ще чіткішою. Пріоритет: зрозуміти, що відбувається саме там.<br><br>
+          <strong>Гіпотеза Б: відчуття відірваності і нечутності.</strong> Різкий перепад (−27%) за один цикл майже завжди означає подію або накопичену ситуацію, де люди відчули, що їх не чують. Це може бути рішення, яке прийнялось без залучення, або зміна в управлінській динаміці.<br><br>
+          <strong>Гіпотеза В: кар'єрна невизначеність у продуктовому юніті.</strong> На тлі загального падіння блоку Розвитку (−4.31%), для команди в конкурентному ринковому середовищі відсутність чіткого кар'єрного шляху підсилює ризик. Нейтральні — ті, хто ще не вирішив.
         </div>
         <div class="hypo-actions">
           <div class="hypo-actions-title">Рекомендовані дії</div>
-          <div class="hypo-action-item"><span class="hypo-arrow">→</span><span>Лідерська зустріч HR + Affemity Lead: відкрита розмова про стан команди, не аналіз цифр. Мета — почути і визначити першочергові кроки. До кінця Q2.</span></div>
-          <div class="hypo-action-item"><span class="hypo-arrow">→</span><span>Фокус на нейтральних: групова сесія зворотного зв'язку у безпечному форматі. Анонімний eNPS не дає деталей — потрібна якісна розмова.</span></div>
-          <div class="hypo-action-item"><span class="hypo-arrow">→</span><span>Пульс-діагностика через 6–8 тижнів після першого кроку. Не чекати H2 2026.</span></div>
+          <div class="hypo-action-item"><span class="hypo-arrow">→</span><span>Зустріч HR з CEO Affemity: відкрита розмова про стан команди. Мета — побачити контекст і визначити дії. До кінця Q2.</span></div>
+          <div class="hypo-action-item"><span class="hypo-arrow">→</span><span>Фокус на нейтралів як групу — груповий формат зворотного зв'язку. eNPS анонімний: не шукаємо конкретних людей.</span></div>
+          <div class="hypo-action-item"><span class="hypo-arrow">→</span><span>Пульс-діагностика через 6–8 тижнів після першого кроку.</span></div>
         </div>
-      </div>
-    </div>
+      </div>    </div>
 
   </div>
 </div>
@@ -1035,7 +1011,7 @@
     <div class="critical-card">
       <div class="critical-num">01</div>
       <div class="critical-title">Career path conversation для кожного: до кінця Q2</div>
-      <div class="critical-text">52.2% Back Office не бачать чіткого кар'єрного шляху. −4.31% по Розвитку — найбільше падіння блоку. IC-функції в HR, Finance, Communications, Operations не мають явних треків.</div>
+      <div class="critical-text">52.2% Back Office не бачать чіткого кар'єрного шляху. −4.31% по Розвитку — найбільше падіння блоку. IC-ролі (Individual Contributor) в різних функціях не мають явних треків зростання.</div>
       <div class="critical-action">
         <ul style="margin:8px 0 0 0;padding-left:18px;line-height:1.8">
           <li>Кар'єрна розмова (career talk) / Розмова про зростання (growth talk) у кожному 1:1 до кінця Q2 — менеджери ведуть як стандарт</li>
@@ -1073,7 +1049,7 @@
   <div class="section">
     <div class="section-label">Висновки Back Office</div>
     <div class="verdict-box">
-      Back Office eNPS 78.26% — <strong>не криза, але тривожний тренд</strong>. Команда впала зі своєї лідерської позиції (~90.27%) за два цикли. При цьому зберігає рідкісне: 0 детракторів, 92% participation, найсильніший блок Партнерства (91.51%) серед усіх юнітів. Люди залучені і готові говорити. Це вікно.
+      Back Office eNPS 78.26% — <strong>тренд на зниження, який потребує уваги</strong>. Команда впала зі своєї лідерської позиції (~90.27%) за два цикли. При цьому зберігає рідкісне: 0 детракторів, 92% participation, найсильніший блок Партнерства (91.51%) серед усіх юнітів. Люди залучені і готові говорити. Це вікно.
       <br><br>
       <strong>Три основні причини:</strong>
       <ul style="margin:10px 0;padding-left:20px;line-height:1.9">
