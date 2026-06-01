@@ -207,12 +207,11 @@
 
 <!-- TABS NAV -->
 <div class="tabs-nav">
-  <button class="tab-btn active" onclick="showTab('summary',this)">Огляд</button>
-  <button class="tab-btn" onclick="showTab('priorities',this)">Пріоритети</button>
-  <button class="tab-btn" onclick="showTab('units',this)">Юніти</button>
-  <button class="tab-btn" onclick="showTab('blocks',this)">Блоки залученості</button>
-  <button class="tab-btn" onclick="showTab('hypotheses',this)">Гіпотези</button>
-  <button class="tab-btn" onclick="showTab('forecasts',this)">Прогнози та Висновки</button>
+  <button class="tab-btn active" onclick="showTab('summary',this)">Overview</button>
+  <button class="tab-btn" onclick="showTab('units',this)">Units</button>
+  <button class="tab-btn" onclick="showTab('blocks',this)">Engagement</button>
+  <button class="tab-btn" onclick="showTab('hypotheses',this)">Hypotheses</button>
+  <button class="tab-btn" onclick="showTab('forecasts',this)">Forecasts</button>
   <button class="tab-btn special" onclick="showTab('backoffice',this)">Back Office</button>
 </div>
 
@@ -307,7 +306,7 @@
     <div style="background:rgba(196,43,71,0.05);border:1.5px solid rgba(196,43,71,0.2);border-radius:14px;padding:16px 20px;margin-top:14px">
       <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--red);font-weight:700;margin-bottom:8px">eNPS як випереджаючий індикатор плинності</div>
       <div style="font-size:13px;line-height:1.7;color:var(--dark)">
-        Дослідження показують: падіння eNPS на 10+ пунктів протягом 2–3 циклів передує зростанню добровільної плинності на 15–25% з лагом 6–12 місяців. Quarks зафіксував −11.09% за два цикли. <strong>H2 2026 — вікно реагування, поки сигнал не конвертувався у відходи.</strong>
+        Дослідження показують: падіння eNPS на 10+ пунктів протягом 2–3 циклів передує зростанню добровільної плинності на 15–25% з лагом 6–12 місяців. Quarks зафіксував −11.09% за два цикли. <strong>H2 2026 — вікно реагування, поки сигнал не конвертувався у звільнення.</strong>
       </div>
     </div>
   </div>
@@ -336,54 +335,7 @@
     </div>
   </div>
 
-  <div class="section">
-    <div class="section-label">Три дії, яких не можна відкладати</div>
-    <div class="critical-card">
-      <div class="critical-num">01</div>
-      <div class="critical-title">Affemity: зустріч і план дій до кінця Q2</div>
-      <div class="critical-text">88% → 60.87% за один цикл. 13% детракторів (3 людини), значна частка нейтральних. Кількісний опитувальник не розкриває причини — потрібна пряма розмова. Запланована зустріч HR з CEO Affemity для аналізу даних і визначення пріоритетних кроків.</div>
-      <div class="critical-action">
-        <ul style="margin:8px 0 0 0;padding-left:18px;line-height:1.8">
-          <li>eNPS анонімний — фокус на системних патернах, не на пошуку конкретних людей</li>
-          <li>Мета зустрічі: зрозуміти контекст і сформувати дії для роботи з нейтральними як групою</li>
-          <li>Власник: <strong>HR</strong>. Результат: план дій до кінця Q2</li>
-        </ul>
-      </div>
-    </div>
-    <div class="critical-card">
-      <div class="critical-num">02</div>
-      <div class="critical-title">Moderation: розібратись у причинах падіння</div>
-      <div class="critical-text">−15.94% eNPS. Зниження participation — не критичний сигнал сам по собі, але вимагає розуміння контексту. Причина падіння поки не очевидна з кількісних даних.</div>
-      <div class="critical-action">
-        <ul style="margin:8px 0 0 0;padding-left:18px;line-height:1.8">
-          <li>Розмова з Head of Trust &amp; Safety: визначити системні патерни, не шукати конкретних людей — eNPS анонімний</li>
-          <li>Пульс-опитування до наступного циклу, якщо розмова не дасть достатньо контексту</li>
-          <li>Власник: <strong>HR + Head of Trust &amp; Safety</strong></li>
-        </ul>
-      </div>
-    </div>
-    <div class="critical-card">
-      <div class="critical-num">03</div>
-      <div class="critical-title">«OKR як формальність» — сигнал з кількох юнітів одночасно</div>
-      <div class="critical-text">Сервісні функції не бачать зв'язку між своїми задачами і цілями компанії — це системна проблема залученості, а не питання розуміння OKR-методології.</div>
-      <div class="critical-action">
-        <ul style="margin:8px 0 0 0;padding-left:18px;line-height:1.8">
-          <li>OKR-воркшоп перед наступним циклом планування: як задачі кожної функції рухають спільні цілі</li>
-          <li>Сервісні функції — учасники формулювання OKR, а не лише їх отримувачі</li>
-          <li>Власник: <strong>Ops-менеджер</strong>. Метрика H2 2026: зниження сигналу у наступному циклі опитування</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-</div>
-</div>
-
-<!-- TAB 2: ПРІОРИТЕТИ -->
-<div id="tab-priorities" class="tab-pane">
-<div class="container">
-
-  <div class="section">
+<div class="section">
     <div class="section-label">Куди дивитись в першу чергу</div>
     <div class="risk-banner" style="margin-bottom:14px">
       <div class="risk-label">Affemity · РИЗИК</div>
@@ -472,6 +424,46 @@
     </div>
 
   </div>
+
+  <div class="section">
+    <div class="section-label">Три дії, яких не можна відкладати</div>
+    <div class="critical-card">
+      <div class="critical-num">01</div>
+      <div class="critical-title">Affemity: зустріч і план дій до кінця Q2</div>
+      <div class="critical-text">88% → 60.87% за один цикл. 13% детракторів (3 людини), значна частка нейтральних. Кількісний опитувальник не розкриває причини — потрібна пряма розмова. Запланована зустріч HR з CEO Affemity для аналізу даних і визначення пріоритетних кроків.</div>
+      <div class="critical-action">
+        <ul style="margin:8px 0 0 0;padding-left:18px;line-height:1.8">
+          <li>Мета зустрічі: зрозуміти контекст і сформувати дії для для нейтралів</li>
+          <li>Owner: <strong>HR</strong>. Результат: узгоджений план дій до кінця Q2</li>
+        </ul>
+      </div>
+    </div>
+    <div class="critical-card">
+      <div class="critical-num">02</div>
+      <div class="critical-title">Moderation: розібратись у причинах падіння</div>
+      <div class="critical-text">−15.94% eNPS. Зниження participation — не критичний сигнал сам по собі, але вимагає розуміння контексту. Причина падіння поки не очевидна з кількісних даних.</div>
+      <div class="critical-action">
+        <ul style="margin:8px 0 0 0;padding-left:18px;line-height:1.8">
+          <li>Розмова з Head of Trust &amp; Safety: визначити системні патерни</li>
+          <li>Пульс-опитування до наступного циклу, якщо розмова не дасть достатньо контексту</li>
+          <li>Owner: <strong>HR + Head of Trust &amp; Safety</strong></li>
+        </ul>
+      </div>
+    </div>
+    <div class="critical-card">
+      <div class="critical-num">03</div>
+      <div class="critical-title">«OKR як формальність» — сигнал з кількох юнітів одночасно</div>
+      <div class="critical-text">Сервісні функції не бачать зв'язку між своїми задачами і цілями компанії — це системна проблема залученості, а не питання розуміння OKR-методології.</div>
+      <div class="critical-action">
+        <ul style="margin:8px 0 0 0;padding-left:18px;line-height:1.8">
+          <li>OKR-воркшоп перед наступним циклом планування: як задачі кожної функції рухають спільні цілі</li>
+          <li>Сервісні функції — учасники формулювання OKR, а не лише їх отримувачі</li>
+          <li>Owner: <strong>Ops-менеджер</strong>. Метрика H2 2026: зниження сигналу у наступному циклі опитування</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
 </div>
 </div>
 
@@ -821,7 +813,6 @@
         <div class="hypo-actions">
           <div class="hypo-actions-title">Рекомендовані дії</div>
           <div class="hypo-action-item"><span class="hypo-arrow">→</span><span>Лідерська зустріч HR + Affemity Lead: відкрита розмова про стан команди, не аналіз цифр. Мета — почути і визначити першочергові кроки. До кінця Q2.</span></div>
-          <div class="hypo-action-item"><span class="hypo-arrow">→</span><span>⚠ eNPS анонімний — не шукаємо конкретних людей. Фокус на системних патернах і груповій роботі з нейтральними.</span></div>
           <div class="hypo-action-item"><span class="hypo-arrow">→</span><span>Фокус на нейтральних: групова сесія зворотного зв'язку у безпечному форматі. Анонімний eNPS не дає деталей — потрібна якісна розмова.</span></div>
           <div class="hypo-action-item"><span class="hypo-arrow">→</span><span>Пульс-діагностика через 6–8 тижнів після першого кроку. Не чекати H2 2026.</span></div>
         </div>
@@ -1050,7 +1041,7 @@
           <li>Кар'єрна розмова (career talk) / Розмова про зростання (growth talk) у кожному 1:1 до кінця Q2 — менеджери ведуть як стандарт</li>
           <li>Карʼєрні треки для Back Office IC-ролей — публікація до кінця H1 2026</li>
           <li>Кар'єрна розмова і розмова про зростання входять у навчальний трек по ретеншину для менеджерів</li>
-          <li>Власник: <strong>HR + Team Leads</strong>. Трекінг виконання: <strong>Ops-менеджер</strong>. Метрика H2 2026: Розвиток ≥ 88% (зараз 84.69%)</li>
+          <li>Owner: <strong>HR + Team Leads</strong>. Трекінг виконання: <strong>Ops-менеджер</strong>. Метрика H2 2026: Розвиток ≥ 88% (зараз 84.69%)</li>
         </ul>
       </div>
     </div>
@@ -1061,7 +1052,7 @@
       <div class="critical-action">
         <ul style="margin:8px 0 0 0;padding-left:18px;line-height:1.8">
           <li>Back Office OKR-воркшоп: «як задачі нашої функції рухають цілі компанії»</li>
-          <li>Провести до початку наступного OKR-циклу. Власник: <strong>Team Leads + HR</strong>. Трекінг: <strong>Ops-менеджер</strong></li>
+          <li>Провести до початку наступного OKR-циклу. Owner: <strong>Team Leads + HR</strong>. Трекінг: <strong>Ops-менеджер</strong></li>
         </ul>
       </div>
     </div>
@@ -1071,8 +1062,8 @@
       <div class="critical-text">52.2% відповіли «ні» на кількість тімбілдингів. Внутрішні спільноти — найслабший блок (73.60%). Для Back Office з різними функціями (HR, Finance, Ops, Legal, Compliance, Communications) спільний захід — це і команда, і міжфункціональна синхронізація.</div>
       <div class="critical-action">
         <ul style="margin:8px 0 0 0;padding-left:18px;line-height:1.8">
-          <li>Один офлайн командний захід для Back Office до кінця H1 2026 — міжфункціональний формат. Власник: <strong>HR + Admin</strong></li>
-          <li>Квартальний ритм Back Office синхронізацій з Q3 — короткі міжфункціональні зустрічі (не лише events). Власник: <strong>Ops-менеджер</strong></li>
+          <li>Один офлайн командний захід для Back Office до кінця H1 2026 — міжфункціональний формат. Owner: <strong>HR + Admin</strong></li>
+          <li>Квартальний ритм Back Office синхронізацій з Q3 — короткі міжфункціональні зустрічі (не лише events). Owner: <strong>Ops-менеджер</strong></li>
           <li>Результат, який вважатимемо успішним: Спільноти ≥ 78% у H2 2026 (зараз 73.60%)</li>
         </ul>
       </div>
